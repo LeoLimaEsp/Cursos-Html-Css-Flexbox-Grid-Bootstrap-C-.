@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/box-model.css">
+    <link rel="stylesheet" href="index.html">
+    <title>Modelo de caja en CSS</title>
+</head>
+<body>
+    <h1>Modelo de caja en CSS</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae eaque recusandae magni aliquam nemo molestiae qui dolorem repellendus excepturi corrupti cum placeat quo, autem odio harum temporibus, facilis dolorum ducimus!</p>
+    <br>
+    <a href="index.html#Temario-css">Ir a temario 🙋🏻‍♂️</a>
+    <!-- ---------------------------------------------------------------------------------------------------------------->
+    <hr>
+    <h2 id="Margin-y-padding">Margin y padding</h2>
+    <div class="caja-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque voluptate amet mollitia pariatur laudantium laborum fuga velit repudiandae fugiat ratione culpa et, cumque perferendis dolorum non in! Qui, sapiente animi?</div>
+    <div class="caja-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque voluptate amet mollitia pariatur laudantium laborum fuga velit repudiandae fugiat ratione culpa et, cumque perferendis dolorum non in! Qui, sapiente animi?</div>
+    <br>
+    <a href="index.html#Temario-css">Ir a temario 🙋🏻‍♂️</a>
+    <!-- ---------------------------------------------------------------------------------------------------------------->
+    <hr>
+    <h2 id="Cajas-de-linea-VS-cajas-de-bloque">Cajas de linea VS cajas de bloque</h2>
+    <span class="Caja-linea">Esto es una caja de linea</span>
+    <span>Esto es un span</span>
+    <div class="Caja-bloque">Esto es una caja de bloque</div>
+    <br>
+    <a href="index.html#Temario-css">Ir a temario 🙋🏻‍♂️</a>
+    <!-- ---------------------------------------------------------------------------------------------------------------->
+    <hr>
+    <h2 id="Propiedad-display">Propiedad display</h2>
+    <p>  Propiedad display:</p>
+    <ul>
+        <li>-Inline (como trabaja en linea)</li>
+        <li>-Block (como trabaja en bloque, ya las trae por defecto)</li>
+        <li>-Inline-block: Se comprende como un elemento de linea pero acepta modificar sus dimensiones (alto y ancho)</li>
+        <li>-None</li>
+        <li>-Table</li>
+        <li>-List-item</li>
+        <li>-Flex: curso de Flexbox</li>
+        <li>-Grid-curso grid CSS</li>
+    </ul>
+    <div class="Caja-none">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi fugiat unde ipsa quas distinctio sit blanditiis quaerat hic ipsam numquam, modi dolore quam earum? Molestias exercitationem accusantium nisi sunt atque?</div>
+    <span class="Caja-linea-bloque">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem fuga, optio facilis in natus sapiente, necessitatibus quis ea amet quibusdam recusandae quas voluptatem qui odit repellat iusto facere totam obcaecati.</span>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis earum, illum commodi sint iusto eligendi, quod repellendus numquam voluptate unde natus sed vitae eos a! Tempore non deserunt beatae eaque!</p>
+    <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+    </ul>
+    <!-- Asi se creo lo de arriba: ul>li*4{item $} 👆🏻 -->
+    <ol>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+    </ol>
+    <p>Observa como ya tiene un cierto margen las "OL" Y "UL" debido a un display list-item proporcionado por navegador.</p>
+    <table>
+        <tr> <!-- /*table row*/ -->
+            <td>Celda1</td>
+            <td>Celda2</td>
+            <td>Celda3</td>
+        </tr>
+        <tr>
+            <td>Celda4</td>
+            <td>Celda5</td>
+            <td>Celda6</td>
+        </tr>
+        <tr>
+            <td>Celda7</td>
+            <td>Celda8</td>
+            <td>Celda9</td>
+        </tr>
+        
+    </table>
+    <p>Aqui cada conformación tiene su clase de display, display table, display tr y display td.</p>
+    <br>
+    <a href="index.html#Temario-css">Ir a temario 🙋🏻‍♂️</a>
+    <!-- ---------------------------------------------------------------------------------------------------------------->
+    <hr>
+    <h2 id="Propiedad-visibility">Propiedad visibility</h2>
+    <div class="Caja-none">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi fugiat unde ipsa quas distinctio sit blanditiis quaerat hic ipsam numquam, modi dolore quam earum? Molestias exercitationem accusantium nisi sunt atque?</div>
+    <div class="Caja-hidden">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi fugiat unde ipsa quas distinctio sit blanditiis quaerat hic ipsam numquam, modi dolore quam earum? Molestias exercitationem accusantium nisi sunt atque?</div>
+    <p>Se encuentra un div sin visibilidad 😱👆🏻</p>
+    <br>
+    <a href="index.html#Temario-css">Ir a temario 🙋🏻‍♂️</a>
+    <!-- ---------------------------------------------------------------------------------------------------------------->
+    <hr>
+    <h2 id="Propiedad-overflow">Propiedad overflow</h2>
+    <p class="Overflow">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi harum consectetur perferendis quos iure quidem accusantium repudiandae deleniti omnis sunt, voluptatum atque, cumque eaque veniam facilis recusandae ducimus, fuga minima!</p>
+    <br>
+    <a href="index.html#Temario-css">Ir a temario 🙋🏻‍♂️</a>
+    <!-- ---------------------------------------------------------------------------------------------------------------->
+    <hr>
+    <h2 id="Tamaño-de-caja">Tamaño de caja</h2>
+    <div class="Box-sizing-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, consectetur? Cumque officia unde iure pariatur reprehenderit explicabo deleniti necessitatibus doloremque, id nulla, rerum praesentium maiores doloribus iusto facilis architecto? Cum?</div>
+    <div class="Box-sizing-border">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, consectetur? Cumque officia unde iure pariatur reprehenderit explicabo deleniti necessitatibus doloremque, id nulla, rerum praesentium maiores doloribus iusto facilis architecto? Cum?</div>
+    <article class="Container-columna-3">
+        <section class="Item">Sección 1</section>
+        <section class="Item">Sección 2</section>
+        <section class="Item">Sección 3</section>
+    </article>
+    <br>
+    <a href="index.html#Temario-css">Ir a temario 🙋🏻‍♂️</a>
+    <!-- ---------------------------------------------------------------------------------------------------------------->
+    <hr>
+    <h2 id="Propiedad-Float-&-Clear">Propiedad Float & Clear</h2>
+    <article class="Container-floats">
+        <section class="float-right">Este elemento flota hacia la derecha</section>
+        <section class="float-left">Este elemento flota hacia la izquierda</section>
+        <div class="Clear-fix"></div>
+        <section class="float-">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias nam placeat minus, deleniti numquam at, in, perferendis reprehenderit impedit ea nihil molestiae sunt soluta ut. Earum repellendus sunt quo. Exercitationem?</section>
+    </article>
+    <br>
+    <a href="index.html#Temario-css">Ir a temario 🙋🏻‍♂️</a>
+    <!-- ------------------------------------------------------------------------------------------------------------- -->
+    <hr>
+    <h2 id="Colapso-de-margenes-verticales">Colapso de margenes verticales</h2>
+    <article class="Margin-colapse">
+        <section>Sección 1</section>
+        <section>Sección 2</section>
+    <!-- <p>Se deberian sumar los margenes que se dieron entre la sección 1 y 2 y deberia haber mas espacio pero ahi es donde surge el lapso de margenes verticales, estos no se suman, pero los margenes horizontales si se suman.</p> -->
+    <section><span>span 1</span><span>span 2</span><span>span 3</span></section>
+    <!-- <p>Se deberian sumar los margenes que se dieron entre el span 1, 2 y 3 y obvimanete los margenes al sumarse crean mas espacio, consideralo a diferencia de margenen verticales.</p> -->
+</article>
+    <a href="index.html#Temario-css">Ir a temario 🙋🏻‍♂️</a>
+    <!-- ---------------------------------------------------------------------------------------------------------------->
+    <hr>
+    <h2 id="Centrado-de-cajas">Centrado de cajas</h2>
+    <article class="Sitio-web">
+    <header class="header-1">Cabezera</header>
+    <main class="main-1">Contenido principal</main>
+    <footer class="footer-1">pie de pagina</footer>
+    </article>
+    <br>
+    <a href="index.html#Temario-css">Ir a temario 🙋🏻‍♂️</a>
+
+</body>
+</html>

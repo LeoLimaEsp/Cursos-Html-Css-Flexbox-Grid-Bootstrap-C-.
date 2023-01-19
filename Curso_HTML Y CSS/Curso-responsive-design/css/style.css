@@ -1,0 +1,422 @@
+
+
+/* CONTENEDORES FLEXIBLES------------------------------------------------------------------------------------- */
+
+[class^="box"]{/*"^" con el circunflejo se dice que a todo con clase "box" aplique esos estilos.*/
+    margin: 3rem auto;
+    background-color: orangered;
+}  
+
+.box{
+    width: 300px;
+    height: 300px;
+    /* Estas son unidades absolutas */
+}
+
+.box-flexible{
+    width: 50%;
+    height: 20vh;
+    /* Estas son unidades relativas, ya es una caja flexible gracias al uso de pixeles y porcentajes. */
+}
+
+.box-flexible-2{
+    max-width: 960px;
+    min-width: 280px;
+    max-height: 480px;
+    min-height: 280px;
+    /* Esta incrementa o decrementa como vaya cambiando de tamaño la ventana del navegador. */
+}
+
+.box-flexible-3{
+    max-width: 960px;
+    min-width: 280px;
+    max-height: 480px;
+    min-height: 280px;
+    width: 300px;
+    height: 300px;
+    /* Por jerarquia obedece los dos ultimos valores, tener cuidado porque aqui siempre tendra un tamaño fijo Si se dan valores de porcentaje.*/
+}
+
+.box-flexible-4{
+    max-width: 960px;
+    min-width: 280px;
+    max-height: 480px;
+    min-height: 280px;
+    width: 50%;
+    height: 20vh;
+    /*  Aqui obedece un tamaño de width del 50% PERO cuando alcance un tamaño minimo de 280 pixeles ya no decrecera, obedece todas las instrucciones incluyendo height por las unidades relativas*/
+}
+
+
+/* MULTIMEDIA FLEXIBLE--------------------------------------------------------------------------------------------- */
+
+img,
+video,
+iframe{
+    max-width: 100%;
+    height: auto;
+}
+/* Se esta creando img y video responsivos. */
+
+
+/* Para tener mejor rendimiento en imagenes, se debe considerar distintos tamañas de una imagen, asi se proponen las imagenes y CSS escoge la mejor que se adapte a la pantalla. por ejemplo img del gato. */
+
+.responsive-media{
+    position: relative;
+    max-width: 100%;
+    height: 0;
+
+    /* 
+    Formato widescreen 16:9
+    16 ---- 100%
+    9 ---- 56.25%
+    */
+    padding-bottom: 56.25%;
+}
+
+.responsive-media > *{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.aspect-ratio-16-9{
+    background-color: blueviolet;
+    aspect-ratio: 16/9;
+    /* 16:9 es el estandar para videos y se muestra en su forma original. */
+}
+
+.aspect-ratio-1-1{
+    aspect-ratio: 1/1;
+}
+
+
+/* Uso de Media queries----------------------------------------------------- */
+
+/* Se establece ajustes para el diseño de impresión de forma actual y en conjunto con otros estilos en una misma hoja.: */
+@media print{
+    @page {
+        size: A5 landscape;
+    }
+
+    body{
+        font-size: 10pt;
+        font-family: sans-serif;
+        background-color: #000;
+        color: greenyellow;
+        background-color: greenyellow;
+    }
+}
+
+@media screen and (prefers-reduced-motion: no-preference){
+    html{
+        scroll-behavior: auto;
+        scroll-behavior: smooth;
+        /* Se indican preferencias sobre movimiento, por defecto se encuentra: no-preference y scroll auto. */
+    }
+}
+
+/* ------------------------------------------------------------------------------------------------------------- */
+
+@media screen and (prefers-color-scheme: dark){
+    html{
+        background-color: #000;
+        color: teal;
+    }
+}
+
+@media screen and (prefers-color-scheme: light){
+    html{
+        background-color: rgb(248, 248, 248);
+        color: rgb(5, 5, 5);
+    }
+}
+
+@media screen and (prefers-color-scheme: no-preference){
+    html{
+        background-color: rgb(148, 8, 8);
+        color: rgb(194, 206, 206);
+    }
+}
+
+/* Aqui depende de la configuración que tenga el usuario en el navegador  */
+
+/* ------------------------------------------------------------------------------------------------------------- */
+
+/* Media queries para distintos tamaños de pantalla, en este ejemplo se muestra el "Mobile first":
+
+En mobil first se usa min-width que significa lo minimo, del valor que des, hacia arriba
+*/
+@media screen and (min-width: 480px){
+    html{
+        background-color: rgb(220, 236, 220);
+    }
+}
+
+/* En Desktop first se usa max-width que significa lo maximo, del valor que des, hacia arriba */
+@media screen and (max-width: 480px){
+    html{
+        background-color: rgb(157, 132, 250);
+    }
+}
+
+
+@media screen and (min-width: 1200px){
+    html{
+        background-color: rgb(245, 247, 245);
+    }
+}
+
+/* -------------------------------------------------------------------------------------------------------------------- */
+
+/* BREAKPOINTS--------------------------------------- */
+
+/* La unidad para expresar media queries es en Ems:
+
+@media all and (min-width: 25em)*/
+
+
+/* VIEWPORT--------------------------------------- */
+
+/* Se establece el viewport como un estandar para la presentación del contenido en la pantalla y se ajusta ancho, largo, y escala:
+
+-width
+-height
+-initial-scale
+-minimum-scale
+-maximum-scale
+-user-scalable
+
+aplicación:
+<meta name="viewport" content="width=device-width,initial-scale=1.0, height=1.0, etc.">
+ */
+
+/* RESPONSIVE-GRID------------------------------------------------------------------------------ */
+
+/* Feature queries------------------------------------------------------------------------------- */
+@supports(grid-template-columns: subgrid){
+    html{
+        background-color: #000;
+        color: greenyellow;
+    }
+    /* Subgrid aun no es soportada en google chrome */
+}
+
+/* Media queries tiene mas opciones como and, not u or que indica mas intrucciones por si algo no se esta aplicando */
+
+
+@supports not (grid-template-columns: subgrid){
+    html{
+        background-color: rgb(241, 246, 248);
+        color: rgb(11, 20, 46);
+    }
+    /* Si no es soportada la instruccion entonces que se aplique el estilo */
+}
+
+@supports (display: grid) and (grid-template-columns: subgrid){
+    html{
+        background-color: rgb(8, 56, 75);
+        color: rgb(244, 246, 252);
+    }
+    /* Deben cumplirse ambas instrucciones para que se vea aplicado el estilo. */
+}
+
+@supports (display: grid) or (grid-template-columns: subgrid){
+    html{
+        background-color: rgb(246, 250, 223);
+        color: rgb(36, 36, 36);
+    }
+    /* Por lo menos una de las instrucciones debe cumplirse para que se vea aplicado el estilo. */
+}
+
+/* Container queries------------------------------------------------------------------------------- */
+
+
+.card{
+    border: solid thin black;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    container-type: inline-size;
+    background-color: rgb(250, 247, 234);
+}
+/* container-type:inline-size; es para la manipulacion de los contenedores hijos. */
+
+.card-img{
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: 0% 50%;
+}
+
+.card-content{
+    padding: 1rem;
+}
+
+@container (min-width: 700px) {
+    .card-container{
+        display: flex;
+    }
+}
+
+.card-container > *{
+    width: 50%;
+    flex-basis: 50%;
+    display: flex;
+}
+
+/* @media screen and (min-width: 500px){
+    .card-container{
+        display: flex;
+    }
+} */
+
+/* SEO---------------------------------
+search engineering Optimization
+
+Posicionamiento en busquedas de google, El SEO son todas las estrategias que se usan para mejorar la visibilidad de una página web a través de su posicionamiento en Google, que la pagina tenga los estandares mas altos requeridos por google pra que este eleve su nivel de busquedad en la web .
+*/
+
+/*RESPONSIVE DESIGN-----Desktop First VS Mobile First-------------------- 
+
+Se recomienda comenzar con mobile-first, las media queries de manor a mayor.*/
+
+/* Fluid design ------------------- 
+El Fluid Design es una técnica de Responsive Design que trata de escalar y adaptar el contenido al tamaño de la pantalla, sin la necesidad de ocupar media queries.
+
+En lugar de diseñar para un determinado número de breakpoints, el Fluid Design crea un sistema dentro del cual los elementos escalan de manera proporcional y fluida.
+
+Utiliza características y funciones modernas de CSS para hacer fluir las interfaces, por ejemplo:
+
+Contenedores fluidos, etc.
+*/
+
+/* ----EJEMPLO DE GRID FLUIDA------ */
+.fluid-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.fluid-item{
+    border: thin solid black;
+}
+
+/* ----EJEMPLO DE TEXTOS FLUIDOS---- */
+
+/* @link https://utopia.fyi/type/calculator?c=320,21,1.2,1140,24,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+
+:root {
+    --step--2: clamp(0.91rem, calc(0.89rem + 0.10vw), 0.96rem);
+    --step--1: clamp(1.09rem, calc(1.05rem + 0.21vw), 1.20rem);
+    --step-0: clamp(1.31rem, calc(1.24rem + 0.37vw), 1.50rem);
+    --step-1: clamp(1.58rem, calc(1.46rem + 0.59vw), 1.88rem);
+    --step-2: clamp(1.89rem, calc(1.71rem + 0.89vw), 2.34rem);
+    --step-3: clamp(2.27rem, calc(2.01rem + 1.29vw), 2.93rem);
+    --step-4: clamp(2.72rem, calc(2.36rem + 1.83vw), 3.66rem);
+    --step-5: clamp(3.27rem, calc(2.75rem + 2.56vw), 4.58rem);
+}
+
+.step--2{
+    font-size: var(--step--2);
+}
+
+.step--1{
+    font-size: var(--step--1);
+}
+
+.step-0{
+    font-size: var(--step-0);
+}
+
+.step-1{
+    font-size: var(--step-1);
+}
+
+.step-2{
+    font-size: var(--step-2);
+}
+
+.step-3{
+    font-size: var(--step-3);
+}
+
+.step-4{
+    font-size: var(--step-4);
+}
+
+.step-5{
+    font-size: var(--step-5);
+}
+
+/*body{
+
+    14 = Tamaño de letra mas pequeño
+    18 = Tamaño de letra mas grande
+    1400 = Tamaño de viewport mas grande
+    300= Tamaño de viewport mas pequeño
+    */
+    /* font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1400 - 300))); 
+}*/
+
+/* ----CONTENEDORES FLUIDOS ----- */
+
+.box-fluid{
+    width: clamp(400px, 60vw, 600px);
+    /* clamp(valor minimo, valor ideal, tamaño maximo) */
+    height: clamp(200px, 30vh, 300px);
+}
+
+/* ----ARQUITECTURA CSS--- */
+
+
+/* METODOLOGIAS IMPORTANTES:
+
+https://bradfrost.com/blog/post/atomic-web-design/
+https://en.bem.info/methodology/quick-start/ 
+
+
+FRAMEWORKS IMPORTANTES:
+
+https://purecss.io/
+https://semantic-ui.com/
+
+Para trabajar con react: https://getuikit.com/
+
+https://get.foundation/
+https://materializecss.com/
+https://tailwindcss.com/
+https://getbootstrap.com/
+*/
+
+/* PROCESADORES CSS 
+Se dividen en pre y post.
+
+Pre:
+Son herramientas que toman un lenguaje y lo transforman en CSS.
+https://sass-lang.com/
+Usar SCSS "SUPER-SASS"
+
+post:
+Son herramientas que procesan el CSS y lo optimizan y automatizan.
+https://postcss.org/
+*/
+
+
+/* HERRAMIENTAS DE AUTOMATIZACIÓN:
+
+Build tools: node JS, grunt, gulp, etc.
+Online tools: Code pen, JS Bin, Autofixier CSS, etc. */
+
+
+/* GUIAS DE ESTILO
+
+Colección de elemento y reglas pre establecidas que aseguran la consistencia y coherencia de nuestro código:
+
+Code Guide
+W3C Design System
+Website Style Guide
+Airbnb CSS / Sass Styleguide
+Idiomatic CSS
+*/
+
+

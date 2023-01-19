@@ -1,0 +1,15 @@
+/* Estilos para impresión de forma antigua e independientes.*/
+
+/* 1. Indicar el número de papel */
+@page{
+    size: A4;
+}
+
+
+/* 2. Se indican estilos generales */
+body{
+    font-size: 12pt;
+    font-family: serif;
+    background-color: #000;
+    color: #fff;
+}

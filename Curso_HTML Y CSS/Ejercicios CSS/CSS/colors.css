@@ -1,0 +1,101 @@
+.color-by-name{
+    background-color: cornflowerblue;
+    color: aliceblue;
+    border: thick solid navy;
+    /* Colores al fondo, borde y letra dados por el nombre directo del color.  */
+}
+
+/* Sistema hexadecimal : 123456789ABCDEF
+RedGreenBlue (medios digitales) vs CyanMagentaYellowKey (medios impresos)
+
+colores en HEX va a ser colores de 6 digitos mas 2 digitos de opasidad si es necesario:
+#FF6600 (FF)Red (66)Green (00)Blue  (00 al 100)%
+*/
+.color-hex{
+    background-color: #FF6600; /*Cuando es pareja es decir: ff 66 00 se pueden simplificar a: f60, ejemplo:*/
+    background-color: #f60;
+    background-color: #00000050; /*Se esta indicando 50% de opasidad*/
+    background-color: #0005; /*Lo mismo de arriba pero simplificado, solo que asi solo se hace la opasidad de rangos de 10 en 10, no tan especifico. */
+    color: #000000;
+    border: #ffffff;
+    border: #000000;
+    border: #000;
+    border: #ffffff;
+    border: #fff;
+    border: #ff0000;
+    border: #f00;
+    border: #00ff00;
+    border: #0f0;
+    border: thick solid #0000ff;
+    border: thick solid #00f;
+}
+
+/*Sistema de color RGB: rgb()  el maximo de valor es 255     255 = f*/
+
+.color-rgb{
+    background-color: rgb(255, 255, 255); /*MINIMO*/
+    background-color: rgb(255, 0, 0);
+    background-color: rgb(0, 255, 0);
+    background-color: rgb(0, 0, 255);
+    background-color: rgb(0, 0, 0); /*MAXIMO*/
+    /* Con opasidad:  con rango de 0 a 1, podiendo pasar por 0.2, 0.3, 0.4, 0.5, 0.75, etc.*/
+    background-color: rgba(0, 0, 0, 0.75);
+    color: rgb(247, 243, 242);
+    border: thick rgb(0,0,0) solid;
+}
+
+/* Sistema HSL mezcla los dos, impreso(yellow, magenta, cian y digital(green, blue, red)
+Hue Saturation Lightness (Tono-Saturación-Luminosidad)
+
+El primero es Hue (Circulo cromático)
+0° - red
+60° - yellow
+120° - green
+180° - cyan
+240° - blue
+300° - magenta
+
+El segundo es saturation (intensidad del color)
+0% Escala de grises al 100% color puro, colocar el simbolo "%" forzosamente.
+
+El tercer valor es lightness (luminosidad del color) 
+0% - negro 
+50% - color puro
+100% - blanco
+*/
+
+.color-hsl{
+    background-color: hsl(0, 100%, 50%);
+    background-color: hsl(120, 100%,50%);
+    background-color: hsl(240, 100%,50%);
+    background-color: hsl(30, 100%,50%);
+    /* Aplicación de la opasidad en porcentaje de 0 a 1.: */
+    background-color: hsla(30, 100%,50%,.75);
+    color: hsl(60, 100%, 50%);
+    border: thick solid hsl(140, 100%, 30%);
+}
+
+/* Transparent: color transparente es igual a aplicar rgba(0,0,0,0)
+
+currentColor: Hereda el valor por defecto o asigna de la propiedad color, del ancestro que tengas definida esta propiedad, busca del ancestro mas cercano al mas lejano.*/
+.color-transparent-current{
+    background-color: navy;
+    background-color: currentColor;
+    
+    background-color: transparent;
+    
+    border: thick solid currentColor;
+    /* busca del ancestro mas cercano, el color que se asigno a otro elemento y sea el mas cercano de currentColor, en este caso el "section" que esta en el archivo HTML es el mas cercano. */
+}
+
+.opacity{
+    background-color: hsl(60, 100%, 50%);
+    color: navy;
+    border: thick solid black;
+    opacity: .2;
+    /* Se aplica la propiedad opacity para todos los elementos en general, va del 0 a 1*/
+}
+
+.opacity-al-80{
+    opacity: .8;
+}

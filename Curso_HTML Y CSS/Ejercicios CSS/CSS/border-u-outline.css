@@ -1,0 +1,52 @@
+.box{
+    background-color: rgb(4, 0, 0);
+    width: 400px;
+    height: 400px;
+    margin:2rem auto;
+    border: thick solid red;
+}
+
+.border-radious{
+    border-radius: 2rem;
+    border-top-left-radius: 4rem;
+    border-top-right-radius: 6rem;
+    border-bottom-left-radius: 5rem;
+    border-bottom-right-radius: 7rem;
+    border-radius: 7rem 0rem;
+    /* Dos valores, el primero la diagonal formada por la esquina superior izquierda, segundo valor la diagonal formada por la esquina superior derecha, tercer valor la esquina inferior derecha unicamente y cuarto la esquina inferior izquierda. */
+    border-radius: 8rem 2rem 4rem 0rem;
+    border-radius: 2rem 6rem;
+}
+
+.border-radious-2{
+    border-radius: 2rem / 6rem;
+    /* Se formara una helipse en lugar de un circulo, ingresando la diagonal mediante dos valores: primero es X y el segundo es Y*/
+    border-radius: 2rem 6rem 8rem 0rem/ 4rem 8rem 10rem 0rem;
+}
+
+.border-radious-3{
+    border-radius: 50%;
+    /* border radius acepta distintas unidades de medida como %, el 50% es suficiente para tener un circulo perfecto siempre y cuando sea antes un cuadrado.  */
+}
+
+.border-radious-4{
+    width: 400px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.outline{
+    color: white;
+    text-align: center;
+    outline-style: dashed;
+    outline-width: 2rem;
+    outline-color: aqua;
+    outline: 1rem greenyellow dashed;
+    outline-offset: 2rem;
+    margin-top: 6rem;
+}
+
+
+
+
+

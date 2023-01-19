@@ -1,0 +1,17 @@
+.table{
+    font-size: 3rem;
+    border-collapse:separate; /*Valor por defecto con este se usa el border-spacing y empty-cells*/
+    /* border-collapse: collapse; */
+    empty-cells: hide; /*Si hay celda vacia este la ocultara pero debe estar separada sin collapse*/
+    empty-cells: show; /*Valor por defecto*/
+}
+
+table,
+th,
+td{
+    border: medium solid black;
+    /* Asi se obtiene la división pero las celdas no se juntan, para eso se usa directamente en tabla la propiedad: border-colapse */
+    border-spacing: 1rem;
+}
+
+

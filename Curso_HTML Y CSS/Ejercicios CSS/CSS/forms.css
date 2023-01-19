@@ -1,0 +1,76 @@
+html{
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+
+.diseño-form{
+    --form-text-color:#333;
+    --form-success-color:#4caf50;
+    --form-error-color:#f44336;
+    --form-bg-color:#ddd;
+    --form-border-color:rgb(34, 34, 34);
+    --form-placeholder-color:#f60;
+
+    background-color: var(--form-bg-color);
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+    border: thin solid var(--form-border-color);
+}
+
+/* Los elementos de formularios trabajan en linea entonces se aplica un display block 😉*/
+
+.diseño-form > *{
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    font-family: sans-serif;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    color: var(--form-text-color);
+    caret-color: red;  /*Es la linea del cursor, cambiar el color con el caret*/
+}
+
+.diseño-form > *::placeholder{
+    color: var(--form-placeholder-color);
+}
+
+.submit{
+    margin-bottom: 0;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--form-placeholder-color);
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.25rem;
+
+}
+
+.submit:hover{
+    cursor: default;  /*  Es el que ya esta establecido*/
+    cursor: pointer;
+    cursor: crosshair;
+    opacity: 75%;
+}
+
+.diseño-form textarea{
+    resize: none;
+    /* La textarea tiene dos "rayas" para dimensionar el tamaño de la caja, con resize: none se elimina. */
+}
+
+.diseño-form > *[required]:invalid{
+    border: thick solid var(--form-error-color);
+}
+
+.diseño-form > *[required]:valid{
+    border: thin solid var(--form-success-color);
+}

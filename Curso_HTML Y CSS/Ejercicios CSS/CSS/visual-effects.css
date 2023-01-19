@@ -1,0 +1,320 @@
+html{
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+
+/*  Box-shadow
+    Text-shadow
+    Multiple-shadow
+    drop-shadow
+*/
+
+.box{
+    border: thick solid black;
+    width: 200px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 7rem;
+}
+
+.shadows{
+    /*box-shadow= La sombra se establece mediante: movX movY Blur-radius Spread-blur Colorblack(por defecto) inset/outset(por defecto) */
+    /*text-shadow= La sombra se establece mediante: movX movY Blur-radius  Colorblack(por defecto)  */
+    box-shadow: 1rem -1rem 9rem 5rem;
+    box-shadow: 1rem 1rem 1rem 1rem #f778 inset;
+    box-shadow: 1rem 1rem 1rem 1rem #f778;
+    text-shadow: -1rem -1rem 0.2rem rgba(58, 58, 19, 0.333);
+    text-align: center;
+    font-size: 2rem;
+}
+
+.shadows-multiple{
+    box-shadow: 1rem 1rem 1rem 1rem rgba(139, 99, 99, 0.533) inset, -1rem -1rem 1rem 1rem rgba(18, 214, 28, 0.533), 1rem 1rem 2rem 2rem black;
+    text-align: center;
+    font-size: 2rem;
+    text-shadow: -1rem -1rem 0.2rem rgba(58, 58, 19, 0.333), 1rem 1rem 1rem yellowgreen;
+}
+
+.drop-shadow img{
+    /* Drop-shadow= El filtro se establece mediante: filter: drop-shadow(movX movY blur-radius color */
+    /* text-align: center;
+    font-size: 2rem; */
+    filter: drop-shadow(-1rem -1rem 0.5rem orangered);
+    /* Se aprecia mejor en una imagen con transparencia alpha. */
+    box-shadow: 1rem 1rem 1rem 1rem rgb(243, 6, 6);
+    max-width: 100%;
+    height: auto;
+    /* Drop-shadow NO tiene sombras pultiples. */
+}
+
+.drop-shadow{
+    width: 600px;
+    height: auto;
+}
+
+/* DEGRADADOS---------------------------------------------------- */
+/* Se usa con background-image */
+.lineal-gradient{
+    background-image: linear-gradient(green, white, red);
+    /* Con la palabra deg= degree "grados" se cambia la posición el ultimo color es la referencia.*/
+    background-image: linear-gradient(90deg, green, white, red);
+    background-image: linear-gradient(0deg, green, white, red);
+    background-image: linear-gradient(360deg, green, white, red);
+    background-image: linear-gradient(45deg, green, white, red);
+    /* Con las palabras "to bottom, to top, to left, to right, to top left, etc" se cambia la posición el ultimo color es la referencia.*/
+    background-image: linear-gradient(to bottom, green, white, red);
+    background-image: linear-gradient(to top, green, white, red);
+    background-image: linear-gradient(to bottom right, green, white, red);
+    background-image: linear-gradient(to top left, green, white, red);
+    /* Con % se indica la cantidad que abarcara cada color e igual de rangos poniendo de donde a donde 10% 20% por ejemplo*/
+    background-image: linear-gradient(to top left, green 50%, white 97% 95%, red);
+    background-image: linear-gradient(to right, green 33%, white 34% 67%, red 68%);
+}
+
+.radial-gradient{
+    background-image: radial-gradient(yellow, navy, orangered, greenyellow);
+    /* Proporciones de abarcamiento, Se expresa en % del radio de la distancia*/
+    background-image: radial-gradient(5rem, yellow 30%, navy 33%, orangered 34%, rgb(255, 47, 161) 60%);
+    background-image: radial-gradient(100px, orange 50%, blue 34% 67%, red); 
+    /*Posicionamiento del circulo */
+    background-image: radial-gradient(100px at top, orange 50%, blue 34% 67%, red);
+    background-image: radial-gradient(100px at top left, orange 50%, blue 34% 67%, red);
+    background-image: radial-gradient(100px at bottom right, orange 50%, blue 34% 67%, red);
+    /* Circulo por defecto o elipse poniendo distancias de radio en X y Y: */
+    background-image: radial-gradient(ellipse 100px 50px, orange 50%, blue 34% 95%, red);
+    background-image: radial-gradient(100px, red 50%, white 51%);
+}
+
+.conic-gradient{
+    background-image: conic-gradient(red 0deg 90deg, blue 120deg 240deg, green 270deg);
+    /* Tambien se indican posiciones, donde inicie con from(el grado) */
+    background-image: conic-gradient(from 90deg, red 0deg 90deg, blue 120deg 240deg, green 270deg);
+    background-image: conic-gradient(from 90deg, red 0deg 120deg, white 120deg 240deg, blue 240deg);
+}
+
+/* REPETIR DEGRADADOS----------------------------- */
+
+.repeat-gradient-lineal{
+    background-image: repeating-linear-gradient(45deg,red 0 5px, green 5px 30px, blue 30px 80px);
+}
+
+.repeat-gradient-radial{
+    background-image: repeating-radial-gradient(ellipse 2rem 4rem, yellow 0 2px, cyan 6px 12px, magenta 12px 24px);
+}
+
+.repeat-gradient-conic{
+    background-image: repeating-conic-gradient(from 90deg, black 0 8%, cyan 8% 16%, brown 16% 20%);
+}
+
+/* GRAFICAS CON DEGRADADOS ---------------------------- */
+.chart-gradient{
+    background-image: conic-gradient(cyan 0 50%, magenta 50% 80%, yellow 80%);
+    border-radius: 50%;
+}
+
+.donut-gradient{
+    background-image: radial-gradient(white 35%,   black 36% 38%,transparent 39%), conic-gradient(cyan 0 33%, magenta 33% 66%, yellow 66%);
+    border-radius: 50%;
+    /* Se esta aplicando un doble degradado*/
+}
+
+.card{
+    border: thick solid black;
+    width: 600px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 7rem;
+}
+
+.card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 50%;
+}
+
+.filter{
+    /* filter: blur(0.10rem); /*Difuminación*/
+    /* filter: brightness(0.75); Los valores van del 0 a 1 como maximo */
+    /* filter: contrast(0.8); Los valores van del 0 a 1 como maximo */
+    /* filter: grayscale(1); Los valores van del 0 a 1 como maximo y se convierte en blanco y negro */
+    /* filter: sepia(1); Los valores van del 0 a 1 como maximo */ 
+    /* filter: hue-rotate(270deg);Aqui se pone los grados para seleccionar del circulo cromatico */
+    filter: invert(1); /* Es de tipo booleano, 1 o 0 */
+    /* filter: opacity(0.25); Los valores van del 0 a 1 como maximo */
+    /* filter: saturate(0.2); Los valores van del 0 a 1 como maximo */
+    /* filter: drop-shadow(1rem 1rem 1rem green); */
+}
+
+.filters-multiple{
+    filter:blur(0.2rem) hue-rotate(270deg) opacity(0.9) invert(1)
+}
+
+/* FILTROS A FONDOS---------------------------------------- */
+
+.back-drop-filter,
+.back-drop-filter-multiple{        /* Es el texto    */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;    /* Centrado en X*/
+    align-items: center;  /* Centrado en Y*/
+    text-align: center;
+}
+
+.back-drop-filter h4{
+    background-color: rgba(255, 225, 255, 0.5);
+    font-size: 3rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    backdrop-filter: grayscale(1);
+    /* Backdrop-filter es para aplicar filtros a un fondo */
+    color: aliceblue;
+    backdrop-filter: sepia(1);
+    backdrop-filter: invert(1);
+    backdrop-filter: hue-rotate(90deg);
+    backdrop-filter: blur(0.3);
+}
+
+
+.relative{
+    position: relative;
+}
+
+
+.back-drop-filter-multiple h4{
+    font-size: 3rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: rgba(255, 102, 255, 0.5);
+    color: white;
+    backdrop-filter: blur(1rem) hue-rotate(240deg) invert(1);
+}
+
+.dark-mode{
+    background-color: white;
+    color: back;
+    filter: invert(1);
+}
+
+.dark-mode img{                /*Se activa con la clase "dark-mode" en la etiqueta html*/
+    filter: invert(1);
+}
+
+/* MODOS DE MEZCLA---------------------- */
+
+.relative{
+    position: relative;
+}
+
+.absolute{
+    position: absolute;
+    left: 0;
+}
+
+/* BLEND-MODE PARA IMAGENES SOBREPUESTAS------------------  */
+
+.blend-modes img{     /*blend-modes es la card padre pero este efecto se aplicara a las imagenes*/
+    mix-blend-mode: normal;   /*Valor por defecto*/
+    mix-blend-mode: color;
+    mix-blend-mode:hue;
+    mix-blend-mode:multiply;
+    mix-blend-mode:hard-light
+}
+
+/* BLEND-MODE PARA BACKGROUNDS SOBREPUESTOS------------------  */
+
+.bg-blend-mode{
+    background-image: url(../assets/puesta-sol.jpg), url(../assets/BuenosDias.jpg);  /*La imagen que ingresa primero es la que se aprecia en la capa superior*/
+    background-size: cover;
+    background-blend-mode: darken;
+    background-blend-mode:normal; /*por defectp*/
+    /* background-blend-mode:color-dodge;
+    background-blend-mode:luminosity; */
+    background-blend-mode:multiply;
+}
+
+/* MAZCARAS (FIGURAS CON LA IMAGEN) */
+
+.clip-path{
+    /* CIRCULO */
+    /* clip-path: circle();
+    clip-path: circle(2rem);
+    clip-path: circle(100px);
+    clip-path: circle(100px at bottom); */
+    clip-path: circle(100px at right); /*La dirección que le demos es el centro de la figura*/
+    clip-path: circle(100px at right top);
+    clip-path: circle(100px at 18% 50%);
+    /* ELIPSE */
+    /* clip-path: ellipse();
+    clip-path: ellipse(120px 80px);
+    clip-path: ellipse(120px 80px at top);
+    clip-path: ellipse(120px 80px at left);
+    clip-path: ellipse(120px 80px at left top);
+    clip-path: ellipse(120px 80px at 24% 50%); */
+    /* CUADRO O RECTANGULO */
+    clip-path: inset(2rem);  /*Figura rectangular, si se aplica un solo valor, este aplicara a los cuatro lados*/
+    clip-path: inset(6rem 3rem); /*El primer valor indica un tipo padding que se comera la imagen del top y bottom y segundo el lado izquierdo y derecho.*/
+    clip-path: inset(4rem 2rem 4rem); /*Tres valores: primero tamaño de top, segundo tamaño de lados horizontales, tercer tamaño bottom.*/
+    clip-path: inset(2rem 3rem 3rem 3rem round 1rem); /*cuatro valores: indica el tamaño de cada lado, en sentido de las manecillas del reloj, comenzando por top y el redondeado tambien, un valor: para dotos lados, dos valores: cruzado y asi consecutivamente al sentido de las manesillas del reloj.*/
+    /* POLIGONO */
+    clip-path: polygon(0 0, 100% 0, 50% 100%, 30% 30% ); /*Por coordenadas de X y Y por puntos y separando el par de coordenadas  por comas, los dos puntos X y Y solo por espacios.
+    https://bennettfeely.com/clippy/ -----> Pagina para crear mas rapido los figuras. */
+    clip-path: polygon(20% 0%, 0% 20%, 18% 50%, 0% 80%, 20% 100%, 50% 70%, 81% 100%, 100% 80%, 81% 49%, 100% 20%, 80% 0%, 50% 30%);
+}
+
+/* FORMAS Y SILUETAS ENTRE TEXTOS E IMAGENES */
+
+.shapes{
+    border: thick solid black;
+    padding: 1rem;
+    margin: 0 auto 5rem;
+    max-width: 800px;   
+    font-size: 1.5rem;
+}
+
+.shapes img{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: 0% 50%;
+}
+
+.float-left{
+    float: left;
+}
+
+.float-right{
+    float: right;
+}
+
+.shape1{
+    margin:3rem 2rem 3rem 0;
+    shape-outside: circle();
+    shape-outside:ellipse(9rem 9rem);
+    shape-outside: ellipse();
+    /* shape-outside: polygon(20% 0%, 0% 20%, 18% 50%, 0% 80%, 20% 100%, 50% 70%, 81% 100%, 100% 80%, 81% 49%, 100% 20%, 80% 0%, 50% 30%); */
+}
+.shape2{
+    margin: 2rem 0 3rem 0.9rem;
+    shape-outside: ellipse();
+}
+
+.shape3{
+    margin: 3rem 11rem 8rem 0rem;
+    shape-outside: ellipse();
+    shape-outside:  polygon(0% 15%, 15% 3%, 34% 0%, 47% 1%, 53% 7%, 60% 18%, 60% 29%, 56% 38%, 54% 44%, 59% 50%, 59% 55%, 58% 63%, 35% 66%, 0% 66%);;
+}

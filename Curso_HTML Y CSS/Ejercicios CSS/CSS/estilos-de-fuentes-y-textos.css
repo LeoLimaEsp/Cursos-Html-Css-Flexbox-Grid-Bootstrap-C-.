@@ -1,0 +1,135 @@
+/* 
+ESTILOS DE LA FUENTE
+-font-family (tipos de letra)
+-font-size (tamaño de letra)
+-font-weight (El grosor o peso)
+-font-style (El tipo de estilo)
+-font-variant (Cada letra utiliza su versión en minúsculas)
+-line-height (variante de linea (altura o interlineado))
+-font (short-hand)(paquete donde se ponen todas las caracteristicas siguiendo este orden:                   Propiedad abreviada para( font-style font-variant font-weight font-size "/" line-height y font-family)
+*/
+
+.font{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: sans-serif;
+    font-size: medium;
+    font-weight: 100;
+    font-style:oblique;
+    font-variant:small-caps;
+    line-height: 2; /* 1 seria como el tamaño normal*/
+    font: italic small-caps bold 24px / 1.5 monospace;
+}
+
+/* Aveces no se encontrara la famiia de letra y hay que exportar de algun lado, ejemplo de exportación 👇🏻 
+
+Formato woff o woff2 - Web Open Font Format
+
+font-display:
+auto - permite que el navegador utilice el metodo predeterminado que suele ser block
+block - oculta brevemente el texto hasta que la fuente haya sido descargada por completo
+swap - indica al navegador que utilice la fuente alternativa para mostrar el texto hasta que la fuente  personalizada se haya cragado por completo 
+fallback - es una mezcla de auto y swap
+optional - ocultara el texto, luego lo cargara con la fuente alternativa y finalmente aplicara la fuente personalizada.
+*/ 
+
+@font-face{
+    font-family: "chalet";
+    src: url("../assets/Chalet.woff") format("woff");
+    font-display:swap;
+        /* url("../assets/Chalet.woff") format("woff2") por si hay mas formatos */
+}
+
+@font-face{
+    font-family: "pecita";
+    src:url("../assets/Pecita.woff") format("woff");
+     font-display:swap; /* Es para indicar que fuente cargara o que acción realizara si no carga la fuente indicada */
+}
+
+.chalet{
+    font-family: "chalet", sans-serif; /* Hay que poner la opcion extra por si nuestra fuente no carga*/
+    font-size: 2rem;
+}
+
+.pecita{
+    font-family: "pecita", cursive;
+    font-size: 2rem;
+}
+
+.raleway{
+    font-family: 'Raleway', sans-serif;
+    font-size: 2rem;
+}
+
+/* HERRAMIENTAS PARA MODIFICAR TEXTO
+
+text-align
+text-decoration
+text-indent (sangria)
+text-overflow (para ocultar texto pero que este presente con "..."
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+text-transform (letras en mayusculas, solo la primera en mayusculas, en negrita, etc.)
+text-spacing (espaciado entre cada letra o caracteres que se encuentre)
+white-space (para respetar espacios en blanco)
+word-break (es para poder separar las palabras cuando ya no hay espacio entre lineas)
+word-spacing (espacios entre cada palabra que se encuentre)
+writing-mode (para colocar el texto en vertical u horizontal (normalmente)
+*/
+
+.text{
+    font-size: 2rem;
+    text-align: center;
+    text-decoration:none;
+    text-indent: 2rem;
+    padding: 1rem;
+    /* text-transform: capitalize; la primer letra de cada palabra en mayuscula*/
+    /*text-transform:uppercase;  todo a mayusculas */
+    text-transform:lowercase; /*(todo a minusculas) quiza para los correos*/
+    letter-spacing: 3rem;
+}
+
+.text-overflow{
+    background-color: rgb(88, 88, 233);
+    font-size: 2rem;
+    border: thin solid black;
+    padding: 1rem;
+    /* Para aplicar el overflow ellipsis se necesita primero: */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.white-space{
+    white-space: pre;
+}
+
+.word-break{
+    font-size: 2rem;
+    padding: 2rem;
+    word-break: break-all; /*No tan recomendable pero se puede 😉 */
+    word-spacing: 2rem;
+    writing-mode:vertical-rl;
+}
+/* __________________fonts-icon__________________ */
+
+.material-symbols-outlined{
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 60px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  }
+
+/* cdnJS para hostear paginas y no descargarlo */
+
+.fa-3x{
+    color: blue;
+}
+

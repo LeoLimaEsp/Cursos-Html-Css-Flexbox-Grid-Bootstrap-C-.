@@ -1,0 +1,72 @@
+:root{
+    color: teal;
+/*Aqui se establece todas las variables generales que aplicaran para cualquier padre e hijos,
+se recomienda usar :root en lugar de HTML, :root tiene mas "peso". */
+    --default-bg-color:rgb(63, 207, 111);
+}
+
+html{
+    color: rgb(10, 10, 10);
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+
+.custom-props-1{
+    --primary-color: gray;
+    --font-size:32px;
+    background-color: var(--primary-color);
+}
+
+.custom-props-2{
+    background-color: var(--default-bg-color);
+    border: thick solid var(--border-color);
+    padding: 1rem;
+}
+
+.custom-props-3{
+    font-size: var(--font-size);
+    border: thick solid var(--border-color);
+}
+
+.title-props{
+    --primary-color: navy;
+    /* Puede existir una variable con el mismo nombre que otra porque las separa por padres, son independientes Pero si quieres que una clase sea para todas las familias entoces se establece en el documento HTML directamente. */
+    color: var(--primary-color);
+    /* Aqui ya esta fuera de su limite la var(--primary-color) porque solo se aplica para el padre y sus hijos, la clase "title-props" ya no es familia 😉 PERO para garantizar un style, se puede poner una opción extra por si la variable no funciona, ejemplo: */
+    color: var(--primary-color, orange);
+    background-color: var(--default-bg-color);
+}
+
+/* 🧨Funciones en CSS🧨 
+💡@import url(style_2.css);  nos ayuda a importar de otra hoja style o distintos tipos de archivo como media.
+💡var(--primary-color, orange); nos ayuda a tener una segunda opción por si la variable no funciona.
+💡calc( los valores que se realiza la operación) nos ayuda a realizar operaciones con las variables.
+*/
+
+.ch-10{
+    --padding-size: 2ch;
+    --num-ch:10ch;
+    background-color: var(--default-bg-color);
+    padding: var(--padding-size);
+    font-size: 2rem;
+    width: calc(var(--num-ch) + var(--padding-size)*2)
+    /* Esto ayuda por si en un futuro hay que cambiar los valores donde se ingreso una de estas variables, solo es cuestion de modificar la variable y no todos lados donde se asigno ese valor, se deben dejar los espacios entre el "+" o no funcionara. */
+}
+
+.min-max{
+    background-color: var(--default-bg-color);
+    margin-top: 1rem;
+    width: min(300px, 20vw);
+    height: max(200px,25vh);
+    /* Min() y max() nos ayudan a establecer un limite de crecimiento o decremento, es decir indicamos como va creciendo y el limite de decremento dependiendo el viewport, hay que establecer los limites y la proporcion de como va aumentando.*/
+}
+
+.clamp{
+    font-size: clamp(2rem, 1rem + 3vw, 3rem);
+    /* Esta función hace dinamico el tamaño del documento, tiene valor min, max y proporción de crecimiento para cambiar dependiendo el tamaño del viewport. */
+}

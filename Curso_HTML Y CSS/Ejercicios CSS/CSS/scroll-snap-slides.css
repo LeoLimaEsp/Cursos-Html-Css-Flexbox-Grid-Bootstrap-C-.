@@ -1,0 +1,104 @@
+html{
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+
+body{
+    margin: 0;
+}
+
+.slides{
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    /* scroll-snap-type: [|X o inline| Y o block| both|] [mandatory(efecto)| proximity(efecto)] */
+    /* scroll-snap-type: block mandatory;
+    scroll-snap-type: y proximity; */
+    scroll-snap-type: y mandatory; 
+    /* Para el efecto de scroll, debe tener estos ajustes principalmente, PARA QUE FUNCIONE LOS HIJOS EN ESTE CASO ".SLIDE" DEBEN TENER "SCROLL-SNAP-ALIGN*/
+}
+
+.slide{
+    width: 100%;
+    height: inherit;
+    background-color: #1e2345;
+    /* scroll-snap-align: none;
+    scroll-snap-align: end;
+    scroll-snap-align: start; */
+    scroll-snap-align: center;
+}
+
+.slide:nth-child(even){
+    background: #108eb4;
+}
+
+.slide-container{
+    width: 100%;
+    /* La anchura del contenedor se puede disminuir un poco. */
+    width: 85%;
+    height: inherit;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vw;
+    color: #d9e8f0;
+}
+
+/* DISEÑO EN HORIZONTAL (CAROUSEL)----------------------- */
+.carousel{
+    border: thick solid #d938f0;
+    display: flex; /*Los hijos tomaran la altura del padre*/
+    width: 80%;
+    height: 50vh;
+    overflow-x: hidden; 
+}
+
+.carousel-container{
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: grid;
+    grid-template-columns: repeat(5, 100%);
+    scroll-snap-type:x mandatory;
+    /* scroll-snap-type: x proximity ; */
+    /* SE DEBE AJUSTAR ESTO PARA QUE FUNCIONE EL SCROLL-SNAP-ALIGN */
+}
+
+.carousel-slide{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #108eb4;
+    /* COMO HIJA SE DEBE AJUSTAR: SCROLL-SNAP-ALIGN */
+    /* scroll-snap-align:none ;
+    scroll-snap-align: end;
+    scroll-snap-align: start; */
+    scroll-snap-align: center;
+}
+
+.carousel-slide:nth-child(even){
+    background: #1e2345;
+}
+
+/* DEGRADADO ESPECIAL A LETRAS--------------------------------------------------------- */
+
+.gradient-text{
+    background-image: linear-gradient(45deg, magenta, yellow);
+    /* -ms-background-clip:text; Para internet explorer */
+    -webkit-background-clip: text;
+    -moz-background-clip: text; /*para mosilla*/
+    
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color:transparent;
+    /* Son propiedades nuevas por lo que hay que poner los prefijos para los navegadores  */
+}

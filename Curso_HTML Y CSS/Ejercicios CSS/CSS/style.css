@@ -1,0 +1,423 @@
+/*
+Documentación:
+- https://es.wikipedia.org/wiki/Hoja_de...
+- https://www.w3.org/html/logo/
+- https://www.w3.org/standards/webdesig...
+- https://www.w3.org/TR/css-2020/
+- https://developer.mozilla.org/es/docs...
+
+Se enlace CSS a HTML mediante tres formas: Interna en cabezal de HTML mediante etiquetas style, externa por una hoja como esta con etiqueta link o en linea directamente a modificaren el maquetado HTML.
+
+/* Importación de otra hoja CSS con esta hoja:  */
+@import url(style_2.css); 
+/* Solo que no es recomendable porque al cargar la pagina en internet esta tardaria mucho y de igual forma bloquea  */
+
+/* Comentarios en CSS, no es igual que en HTML.   con teclado es:ctrl + K + C
+Regla CSS consta de 2 partes:
+
+1| El selector por etiqueta, clase ".", id "#", etc.
+
+2| Bloque de declaraciones:
+{
+atributo:valor; 
+atriuto-de-mas-de-dos-palabras:otro-valor;
+}
+
+EJEMPLO: */ 
+h1{
+    color:rgb(28, 174, 218);
+    background-color:rgb(14, 4, 59);
+
+}
+p{
+    color: midnightblue;
+}
+
+/* Dar estilos con "id" se considera anti-patron y no se recomienda uilizar para css. */
+#Parrafo-dos{
+    background-color: rgb(204, 200, 200);
+}
+/* -------------------------------------------------------------------------------------------------------------------- */
+/* Dar estilos con "clases" nos permite reutilizar nuestro codigo css.   */
+.bg-skyblue{
+    background-color: skyblue;
+}
+
+.bg-steelblue{
+    background-color: steelblue;
+}
+
+.text-20{
+    font-size: 20px;
+}
+
+.text-32{
+    font-size: 32px;
+}
+
+.text-white{
+    color: white;
+}
+/* Se recomienda colocar las clases por nombre alfabético y como nombre el estilo que se dara, como se muestra arriba. 👆🏻 */
+/* -------------------------------------------------------------------------------------------------------------------- */
+.Hijos-directos > li {
+    background-color: thistle;
+}
+/* Aqui se aplica el estilo solo al primer elemento directo, el camino es clase Hijos.directos(padre) li>b, aplica a li, es el primero. (Trabajan en bloque) */
+/* -------------------------------------------------------------------------------------------------------------------- */
+.Hijos-descendientes b{
+    background-color: thistle;
+}
+/* Aqui se aplica el estilo a la etiqueta "b", ya no es hijo principal, para esto se pone la etiqueta clase(padre) y un espacio en blanco indicando el salto de etiqueta principal. (Trabajan en linea)*/
+/* -------------------------------------------------------------------------------------------------------------------- */
+.Hermanos-general ~ li{
+    background-color: thistle;
+}
+/* Los selectores de hermanos aplicara a los elementos que son hermanos(en el mismo nivel) y que esten por debajo de la referencia seleccionada, es decir aplicara a todos despúes de el seleccionado, no incluyendo al seleccionado.  */
+/* -------------------------------------------------------------------------------------------------------------------- */
+.Hermanos-adyacentes + li{
+    background-color: thistle;
+}
+/* Los selectores de hermanos adyacentes aplican a un solo hermano que este debajo de la referencia seleccionada, es decir aplicara a un solo hermano del mismo nivel que este por debajo directamente y no se incluye al seleccionado.  */
+/* -------------------------------------------------------------------------------------------------------------------- */
+.Selectores-atributos a[href]{
+    color: orangered;
+}
+/* Selectores de atributo nos permiten aplicar estilos utilizando el atributo de alguna etiqueta, por ejemplo el atributo "href" de la etiqueta "a".  */
+/* -------------------------------------------------------------------------------------------------------------------- */
+.Selectores-atributos a[target="_blanck"]{
+    font-weight: bold;
+}
+/* Aqui se aplica el estilo al atributo target, especificamente al de "_blank"  */
+/* -------------------------------------------------------------------------------------------------------------------- */
+.Selectores-atributos a[href*="jonmircha"]{
+    font-size: 24px;
+}
+/* Aqui se utiliza el comodin: "*" significa que se aplicara a lo que sea que tu quieras, en este ejemplo se aplica el estilo a la etiqueta "a" con "href" y que este precisiamente tenga la palabra "jonmricha"  */
+/* -------------------------------------------------------------------------------------------------------------------- */
+.Selectores-atributos a[href^="http://"]{
+    text-decoration: none;
+}
+/* Con el comodin: "^" (circunflejo) realiza el estilo con palabras que "comienzen" con la palabra que queremos al inicio, en este ejemplo solo todos los que comiencen con "http" se aplicara.  */
+/* -------------------------------------------------------------------------------------------------------------------- */
+.Selectores-atributos a[href$=".com"]{
+    background-color: black;
+}
+/* Con el comodin: "$" se realiza el estilo con palabras que "terminan" con la palabra que queremos al final, en este ejemplo solo aplicara a todos los que terminen con ".com" se aplicara.  */
+/* -------------------------------------------------------------------------------------------------------------------- */
+.Selectores-atributos a[class~="cursos"]{
+    background-color: midnightblue;
+}
+/* En este comodin: "~"(tilde) es un filtro buscador de alguna clase, se pone la clase a buscar en una lista de clases separadas por espacios, como se muestra en el ejemplo.  */
+/* -------------------------------------------------------------------------------------------------------------------- */
+.Selectores-atributos a[class|="menu"]{
+    font-style: italic;
+}
+/* En este comodin: "|"(pipe) es un filtro buscador de alguna clase, se pone la clase a buscar en una lista de clases separadas por espacios y que en seguida se encuentre un "-", como se muestra en el ejemplo: class="menu-item" */
+/* -------------------------------------------------------------------------------------------------------------------- */
+*{
+    font-family: sans-serif;
+}
+/* Esto aplicara el diseño a todo lo que tenga en el documento HTML, aqui se aplico un cambio de letra a todo el documento.
+----------------------------------------------------------------------------------------------------------------------- */
+Selector-universal *{
+    font-size: 24px;
+}
+/* Aqui se aplica universal pero desde un punto que se le de, por ejemplo desde la mitad del documento HTML hacia abajo toda un grupo, tu escojes desde que punto, en este ejemplo se aplica a TODO lo que contenga la etiqueta Selector-universal. */
+/* -------------------------------------------------------------------------------------------------------------------- */
+.form-pseudoclases *:required{
+    border-color: yellow;
+}
+/* Aqui indico que TODO en la clase form-pseudoclases PERO con el elemento required se le aplicara: borde de color amarillo. A esta se le llama la pseudoclase required, se debe poner: "*" y ":"*/
+/* -------------------------------------------------------------------------------------------------------------------- */
+.form-pseudoclases *:valid{
+    border-color: green;
+}
+/* Aqui se aplica la pseudoclase valid, se indica que se si el input se lleno con la información correcta entonces se pone los bordes de color verde, de igual forma se aplicara a TODOS los elementos de la clase: form-pseudoclases que tengan el elemento "valid".  */
+.form-pseudoclases *:invalid{
+    border-color: red;
+}
+/* Lo contrario de valid */
+/* NOTA: tambien funciona con atributo pattern. */
+/* ---------------------------------------------------------------------------------------------------------------------*/
+.form-pseudoclases *:focus{
+    background-color: skyblue;
+}
+/* Indica que pintara el fondo azul en todo donde se pona el cursor especificamente de la clase .form-pseudoclases. */
+/* -------------------------------------------------------------------------------------------------------------------- */
+.form-pseudoclases *:disabled{
+    background-color: pink;
+}
+/* Indica que pintara el fondo rosa en todo lo que esta deshabilitado de la clase .form-pseudoclases. */
+/* -------------------------------------------------------------------------------------------------------------------- */
+.menu-pseudoclases a:visited{
+    color: olive;
+}
+/* Aqui se pintara de color a el hyperlink una vez ya se haya visitado, se indica que se aplicara a todos los hyperlink (a) de la clase menu-pseudoclases.  */
+/* ---------------------------------------------------------------------------------------------------------------------*/
+.menu-pseudoclases a:hover{
+    color: orangered;
+}
+/* Cualquier elemento tiene estado hover   IMPORTANTE: Al aplicar estado hover, este se debe aplicar al ultimo de los estilos, debido que hay jerarquías y si se pone antes otro estado, este lo deshabilitara, se debe investigar la jerarquia de estados de pseudocodigo para que no se dehabiliten.*/
+/* ---------------------------------------------------------------------------------------------------------------------*/
+.p-pseudoclases:hover{
+    font-size: 20px;
+}
+/* Aqui indica que aplicara un aumento de letra a 20px por el hover aplicado a todo de la clase .p-pseudoclases.  */
+/* -------------------------------------------------------------------------------------------------------------------- */
+#Temario-css:target{
+    background-color: lightgreen;
+}
+/* Aqui indica que se aplicara un fondo de color verde claro cuando este seleccionado el "id: Temario-css".  */
+/* ---------------------------------------------------------------------------------------------------------------------*/
+.Lista-pseudoclases li:first-child{
+    color: green;
+}
+/* Aqui dice que se pondra de color verde el primer li del listado de todos los li.  */
+/* ---------------------------------------------------------------------------------------------------------------------*/
+.Lista-pseudoclases li:last-child{
+    color: violet;
+}
+/* Aqui dice que se pondra de color violeta el ultimo li del listado de todos los li.  */
+/* ---------------------------------------------------------------------------------------------------------------------*/
+.Lista-pseudoclases li:nth-child(3){
+    color: lightseagreen;
+}
+/* Aqui dice que se pondra de color azulverde el Li de la posición 3 del listado existente */
+/* ---------------------------------------------------------------------------------------------------------------------*/
+.Lista-pseudoclases li:nth-child(3n){
+    font-size: 24px;
+}
+/* Aqui dice que cada tercer numero(3n) se ponga la letra de tamaño 24px.  */
+/* ---------------------------------------------------------------------------------------------------------------------*/
+.Lista-pseudoclases li:nth-child(2n){
+    font-weight: bold;
+}
+/* Aqui dice que cada segundo numero(2n) se ponga la letra en estilo bold.  */
+/* -------------------------------------------------------------------------------------------------------------------- */
+.Lista-pseudoclases li:nth-child(even){
+    background-color: yellowgreen;
+}
+/* Even: pares, se aplica un amarillo a los pares de la clase Lista-pseudoclases a li, hijos pares.   */
+/* -------------------------------------------------------------------------------------------------------------------- */
+.Lista-pseudoclases li:nth-child(odd){
+    background-color: orangered;
+}
+/* Odd: inpares, se aplica un naranja a los inpares de la clase Lista-pseudoclases a li, hijos inpares.   */
+/* -------------------------------------------------------------------------------------------------------------------- */
+.Articulo-pseudoclases p:first-of-type{
+    background-color: pink;
+}
+/* Aqui indica que el primer elemento de la clase parrafo "p" se aplicara el estilo.  */
+/* -------------------------------------------------------------------------------------------------------------------- */
+.Articulo-pseudoclases p:last-of-type{
+    background-color: rgb(231, 22, 57);
+}
+/* Aqui indica que el ultimo elemento de la clase parrafo "p" se aplicara el estilo.  */
+/* ---------------------------------------------------------------------------------------------------------------------*/
+.Articulo-pseudoclases p:nth-of-type(3){
+    background-color: rgb(120, 236, 25);
+}
+/* Aqui indica que el ultimo elemento de la clase parrafo "p" se aplicara el estilo.  */
+/* nth: colocar el numero que yo quiera, en este caso el "p" de la posición 3 en el listado.  */
+/* First type, last type, y demas se pueden agregar tamien con el "of type".  */
+/* ---------------------------------------------------------------------------------------------------------------------*/
+.Articulo-pseudoclases *:not(p,button,#uno){
+    background-color: red;
+}
+/* Aqui indica a cuales NO se les asignara el estilo, en este caso a los parrafos, a button, a un ID: #uno, etc no se aplican los cambios. */
+/* ESTAS SON ALGUNAS PSEUDOCLASES, HAY MAS QUE SE PUEDEN ENCONTRAR EN MOZILLA.COM  */
+/* ---------------------------------------------------------------------------------------------------------------------*/
+/* PSEUDO-ELEMENTOS: dan estilo a partes especificas de un elemento, se utiliza: "::" para diferenciar de las pseudoclases, de igual forma se pueden revisar los tipos existentes en MDN MOZILLA */
+/* -------------------------------------------------------------------------------------------------------------------- */
+.BMW-Serie-1::before{
+    content:"🚗";
+}
+/* El content es muy importante en el pseudolemento before, indica que se pone el emoji: "🚘" antes de lo que tenga la etiqueta BMW-Serie-1  */
+/* ---------------------------------------------------------------------------------------------------------------------*/
+.BMW-Serie-1::after{
+    content:"🚗";
+}
+/* El content es muy importante en el pseudolemento after, indica que se pone el emoji: "🚗" despúes de lo que tenga la etiqueta BMW-Serie-1, sin el content no hay sentido usar esto. */
+/* ---------------------------------------------------------------------------------------------------------------------*/
+.Precio::before{
+    content: "$";
+    font-weight: bold;    
+}
+
+.Precio::after{
+    content: "USD";
+    font-weight: bold;
+}
+/* Ejemplo de lo mismo de arriba. ☝🏻 */
+/* ---------------------------------------------------------------------------------------------------------------------*/
+.p-pseudo-elementos::first-letter{
+    font-weight: bold;
+    font-size: 32px;
+}
+/* Aqui indica cambios en el primer elemento, es decir la primer palabra del parrafo de la clase "p-pseudo-elementos".  */
+/* ---------------------------------------------------------------------------------------------------------------------*/
+.p-pseudo-elementos::first-line{
+    color: coral;
+}
+/* Aqui indica cambios en el primer elemento, es decir la primer linea del parrafo de la clase "p-pseudo-elementos".  */
+/* Esto aplica para cualquier etiqueta semantica como divs, parrafos, etc.  */
+/* ---------------------------------------------------------------------------------------------------------------------*/
+.p-pseudo-elementos::selection{
+    color: greenyellow;
+    background-color: black;
+}
+/* Aqui indica cambios en lo que contenga la clase "p-pseudo-elementos", en este caso un parrafo, se pone de esos colores cuando se selecciona el elemento.  */
+/* Esto aplica para cualquier etiqueta semantica como divs, parrafos, etc.  */
+/* ---------------------------------------------------------------------------------------------------------------------*/
+.input-pseudoelementos::placeholder{
+    color: green;
+}
+/* ---------------------------------------------------------------------------------------------------------------------*/
+/* Agrupar selectores. */
+.Form-agrupar-selectores input[type="text"],
+.Form-agrupar-selectores input[type="email"],
+.Form-agrupar-selectores textarea{
+    border-color: yellow;
+    background-color: black;
+    font-size: 20px;
+    display: block;
+    width: 300px;
+    border-width: 2px;
+    border-style: dashed;
+}
+/* Los selectores se agrupan por medio de la coma.  */
+/* -------------------------------------------------------------------------------------------------------------------- */
+/* El algoritmo de CSS es la forma en la que el navegador aplica los estilos al documento HTML. Es vital entender este concepto para que entiendas como se aplica y en algunas ocaciones se sobreescriben las reglas CSS:
+-Cascada
+-Especificidad
+-Herencia */
+/* CREACIÓN DE ESTILOS 
+1 Existen estilos predeterminados por el navegador para etiquetas que se van creando sin haber antes dado un estilo.
+2 Estilos dados por el usuario pero a la computadora o dispositivo, ya tu computadora adapta esos estilos, por ejemplo el "dark-mode"  
+3 Estilos del autor, estilos que el autor da a traves de CSS*/
+/* ENTONCES...
+------Estilos en cascada-------- es como se va dando el estilo dependiendo de la manipulacion, por ejemplo tenemos una etiqueta div, se le dara el estilo dependiendo el estilo que encuentre, el camino seria:
+User agent: el estilo de navegador
+Personalizacion del usuario
+Los estilos del autor 
+La especificidad del autor 
+Orden de aparicion, dependiendo cual intervenga al ultimo es el que ganara, es decir si se sobreescribe, ganara el ultimo estilo dado, por eso es cascada.  
+------Especificidad------ es el peso que se le da dependiendo la especificción con la que se indica.
+La especificidad es el peso que tiene un selector cuando hay conflicto de estilos, se calcula de la siguiente forma:
+Etiquetas y pseudoelementos.......0,0,0,1
+Clases, atributos y pseudoclases..0,0,1,0
+Identificadores...................0,1,0,0
+Estados en linea..................1,0,0,0
+!important........................Rompre la especificidad, se omiten todas las rglas y gana el estilo que tiene esta palabra.
+
+EVITA USAR TANTA ESPECIFICIDAD, ES DECIR DIRECCIONAR UNA RUTA MUY EXTENSA PARA DAR ESTILO, POR EJEMPLO:
+.CLASE . CLASE2 . CLASE3, ETC{
+}
+
+EJEMPLO PRACTICO DE CASCADA Y ESPECIFICIDAD (Se ordenan por el de mayor peso a menor, sin importar la cascada):
+*/
+.Cita-marco{
+    background-color: aquamarine !important;
+}
+/* Aqui la especificidad se rompe y es mayor a los siguientes estilos por lo tanto se coloca este sin importar el orden en cascada PERO********SI HAY MAS DE DOS !IMPORTANT ENTONCES APLICA LA CASCADA APLICANDO EL ULTIMO INGRESADO 
+AUN ASI TRATA DE NO USAR ESTO*************😉.*/
+
+.Cita-marco{
+    background-color: rgb(206, 209, 32) !important;
+}
+/* Aqui la especificidad se rompe y es mayor a los siguientes estilos por lo tanto se coloca este sin importar el orden en cascada.*/
+
+/* ____________________________________________________________________________________________________________________ */
+/* Estados en linea son los mas pesados de especificidad 1,0,0,0 y se ingresan en la etiqueta en el documento HTML. 
+<blockquote id="Cita-marco" class="Cita-marco" style="background-color:orangered;"> */
+/* ____________________________________________________________________________________________________________________ */
+
+blockquote#Cita-marco.Cita-marco{
+    background-color: lawngreen;
+}
+/* Aqui la especificidad es de 1,1,1 y es mayor a los siguientes estilos por lo tanto se coloca este sin importar el orden en cascada.  EVITA HACER ESTO DE REVOLVER ID CON CLASS PERO SI ES NECESARIO, ASI SE ACOMODAN.*/
+
+blockquote#Cita-marco{
+    background-color: rgb(133, 8, 8);
+}
+/* Aqui la especificidad es de 1,0,1 y es mayor a los siguientes estilos por lo tanto se coloca este sin importar el orden en cascada.  */
+#Cita-marco{
+    background-color: aquamarine;
+}
+/* Aqui la especificidad es de 1,0,0 y es mayor a los siguientes estilos por lo tanto se coloca este sin importar el orden en cascada.  */
+
+blockquote.Cita-marco{
+    background-color: tomato;
+}
+/* Aqui por cascada toca el estilo con background cornflowerblue pero por especificidad queda el background tomato, este ultimo tiene especificidad de 0,1,1 y es mayor a los otros dos estilos dados.  */
+
+blockquote{
+    background-color: burlywood;
+}
+
+.Cita-marco{
+    background-color: cornflowerblue;
+    font-size: 32px;
+    border-style: dotted;
+    /* Se pone en color negro por determinado.*/
+    border-color: red;
+}
+
+/* La herencia: es la capacidad de un selector de obtener (heredar) los valores de sus ancestros mas cercanos, para aplicarla se usa el valor inherit, si queremos evitarla podemos asignar otro valor o inicializar la propiedad en cuestion con el valor initial 
+
+La herencia no se aplica para todo, para tipografia  si pero para algunos colores se deberia revisar si es posible, por ejemplo el background-color.
+
+EJEMPLO: */
+.Cita-marco cite{
+    background-color: navy;
+    /* Asi se aplica la herencia: */
+    background-color: inherit;
+    /* Ya se heredo del color de la clase .cita-marco, aqui si es necesario poner que se herede pero tipografia ya se hereda en automatico sin necesidad de la inicialización de inherit. */
+    font-size: 24px;
+    /* De primero tenia font-size heredado de 32 px en automatico, se cancela y se pone ahora 24px.  */
+    font-size: initial;
+    /* Ahora se puso un font.size inicializado, es decir reseteado por el navegador y pre-establecio uno de 16px como valor estándar.  */
+    border-style: inherit;
+    border-color: inherit;
+    /* Aqui ya se heredo el border-style ya que este no hereda en automatico como la tipografia. */
+
+    /* https://web.dev/learn/css/inheritance/#which-properties-are-inheritable */
+}
+
+/* Prefijos para los navegadores:
+-webkit-user-select:none;
+-mox-usr-select:none;
+-ms-user-select:none;
+user-select:none;
+
+https://autoprefixier.github.oi/
+https://caniuse.com/  */
+/* -------------------------------------------------------------------------------------------------------------------- */
+.modelo-de-caja:visited,
+.Posicionamiento-en-CSS:visited,
+.Ejemplos-de-posicionamiento,
+.colores-css:visited,
+.Unidades-de-medida:visited,
+.variables-functions:visited,
+.estilos-de-fuentes-y-textos,
+.border-u-outline,
+.background,
+.images,
+.list-items,
+.tables,
+.forms,
+.Efectos-visuales,
+.Scroll-one-page,
+.scroll-snap,
+.motion{
+    color: rgb(224, 126, 14);
+}
+ /*-------------------------------------------------------------------------------------------------------------------- */
+
+
+
+
+
+
+

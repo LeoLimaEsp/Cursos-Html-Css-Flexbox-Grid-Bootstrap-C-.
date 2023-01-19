@@ -1,0 +1,175 @@
+/* 
+Unidades de medida
+
+1) Absolutas (su valor no cambia, son unidades del mundo real)
+pc, cm, mm, in, Q (para imprimir archivos)
+pt (1/72in) puntos - una 72 parte de la pulgada
+px (1/96in) pixel
+
+2) Relativas (su valor es relativo a un contexto)
+em, rem, ex, ch-al tamaño de la fuente
+
+🔰em - basada en la anchura de la "m" de la fuente del elemento
+
+🔰rem - basada en la anchura de la "m" de la fuente del elemento raiz (html)
+
+🔰ex - basada en la altura de la "X" de la funcion del elemento 
+
+🔰ch - basado en la anchura del "0" de la fuente del elemento 
+
+🔰% - el tamaño del contenedor 
+
+Vw, vh, vmin, vmax, al tamaño del viewport
+
+🔰vw - ancho del viewport van de 1 a 100
+
+🔰vh - alto del viewport van de 1 a 100
+
+🔰vmax - entre vw y vh toma el que tenga mayor valor
+
+🔰vmin - entre vw y vh toma el que tenga menor valor
+
+Conversiones entre unidades: 
+http://pxtoem.com/
+*/
+
+html{
+    box-sizing: border-box;
+    background-color: black;
+}
+
+body{
+    background-color:rgb(161, 240, 145);
+    margin: 0;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+
+.pixels{
+    background-color: cadetblue;
+    width: 500px;
+    height: 400px;
+    border: solid thick rebeccapurple;
+    padding: 20px;
+    font-size: 16px;
+    /* Tamaño estandar 16 pixeles */
+}
+
+.ems{
+    background-color: rgb(134, 42, 14);
+    border: solid thick rgb(228, 136, 31);
+    padding: 1em 0.5em;
+    font-size: 24px;
+    /* Tamaño estandar 1 em = 16 pixeles PERO se puede establecer un tamaño estandar nuevo con el font size debido a que funciona como el inherit, busca un padre, si no hay ingresa el 16 pixeles del body pero si existe un padre este caso el de la clase ems entonces sera 24 px la base y tambien para sus futuros hijos*/
+}
+
+.em-child{
+    background-color: rgb(255, 166, 0);
+    border: solid thick rgb(128, 9, 0);
+    font-size: 2em;
+    margin: 0.5em;
+    padding: 1em;
+    /* Aqui este es hijo del padre de la clase ems por lo cual trabajara con la base de 24 pixeles de partida PERO aqui tambien se establece un nuevo font size de 2 em = 48 pixeles que sera el nuevo estandar.*/
+}
+
+.rem{
+    background-color: rgb(74, 38, 172);
+    border: solid thick rgb(15, 238, 34);
+    padding: 1rem 0.5rem;
+    font-size: 24px;
+    /* El tamaño estandar siempre sera el de raiz de html de 16 pixeles o que se propuso al html en un inicio,el font size no interviene en paddings ni en ninguna otra opcion de tamaños para la caja.*/
+}
+
+.rem-child{
+    background-color: rgb(161, 221, 22);
+    border: solid thick rgb(16, 78, 160);
+    font-size: 2rem;
+    margin: 0.5rem;
+    padding: 1rem;
+    /*Este es una caja hija pero no depende del tamaño de su padre, es decir se basa en los pixeles propuestos de raiz del html aunque se proponga otro font size, este no afecta a otras medidas de la caja.*/
+}
+
+.ex{
+    background-color: rgb(197, 177, 170);
+    border: solid thick rgb(27, 16, 2);
+    padding: 1ex 0.5ex;
+    font-size: 24px;
+    /* Tamaño estandar 7.156 ex = 16 pixeles PERO se puede establecer un tamaño estandar nuevo con el font size debido a que funciona como el inherit, busca un padre, si no hay ingresa el 16 pixeles del body pero si existe un padre este caso el de la clase ems entonces sera 24 px la base y tambien para sus futuros hijos*/
+}
+
+.ex-child{
+    background-color: rgb(41, 30, 66);
+    border: solid thick rgb(20, 107, 49);
+    font-size: 2ex;
+    margin: 0.5ex;
+    padding: 1ex;
+    /* Aqui este es hijo del padre de la clase ex por lo cual trabajara con la base de 24 pixeles de partida PERO aqui tambien se establece un nuevo font size de 2 ex que sera el nuevo estandar.*/
+}
+
+.ch{
+    background-color: rgb(180, 172, 196);
+    width: 10ch;
+    /* Esto es para tener una referencia de espacio, es la unidad por simbolo, en este caso por numero, si pongo 20ch, nos dara una dimención para 20 datos, aun asi hay que tener cuidado con los dato porque algunos son mas anchos que otros, los estandar son los numeros, el font size no afecta para nada es directo con el numero de valores. */
+}
+
+.percentages{
+    background-color: rgba(84, 124, 23, 0.411);
+    width: 80%;
+    font-size: 100%;
+    padding: 5%;
+    margin: 20% 10%;
+    /* height: 50%; */
+    /* Aqui va de la mano con el box sizing que se le dio al html, es decir si fue de 16px, el 100% en otras medidas de caja seran los 16px hablando del font size, el padding o margin son del porcentaje total del padre, en este caso del body, ya si hay un hijo de otro padre ya depende del 100% del sub-padre y ahi si funciona la altura, si pones altura referente al body esta no funciona, solo con un sub-padre que tenga medidads proporcionadas, ejemplo: */
+}
+
+.height-parent{
+    background-color: black;
+    height: 500px;
+    width: 500px;
+}
+
+.height-child{
+    background-color: #ffffff;
+    height: 50%;
+    width: 50%;
+}
+
+.viewport{
+    background-color: darkcyan;
+    width: 100vw;
+    /* para poner el viweport width en 100% es necesario dar valor de 0 en margin al body**** tambien recuerda que las barras de scroll del navegador tambien forman parte del viewport, POR LO TANTO es mejor dar valores de % al width.
+    
+    NOTA: no importa que este sea hijo directo del body o tenga otro padre, aun asi se desborda si no se asigna valor de medida en %*/
+    /* width: 100%; */
+    height: 100vh;
+    /* El height si es correcto dejarlo en vh */
+    font-size: 5vw;
+    /* El font-size tambien es responsive gracias a los valores en medida de vw y vh, nada nos impide usar estos mismos valores para padding y margin.*/
+    padding: 5vw 5vh;
+    /* Esta herramienta de VW y VH nos permite hacer fluir las medidas mediante el cambio de dimenciones del viewport. */
+}
+
+.vmin,
+.vmax{
+    background-color: #9ACD32;
+    border: thick rgb(156, 145, 145) solid;
+    width: 50vmax;
+    height: 50vmin;
+    /* Este tipo de valores para las medidas es muy dificil de usar en algo practico. */
+}
+
+/* 
+RESUMEN DE VALORES PARA MEDIDAS :
+
+🚩Las ABSOLUTAS son para cuando el proyecto que estas trabajando se va a imprimir, ya dependera si es en pc, cm, mm, in o incluso pixeles del tamaño de tu impresion del documento.
+🚩las RELATIVAS:
+🙋🏻‍♂️Se recomienda definir el font size del html en pixeles.(la base es 16 px)
+🙋🏻‍♂️La tipografia, distancias de padding, margin y distancias internas/externas en rems.
+🙋🏻‍♂️Los ex quiza para definir espacios verticales limitados y los ch para difinir espacios en horizontal limitados para cards por ejemplo.
+🙋🏻‍♂️Los porcentajes para definir en el responive design tamaños de cajas tomando en cuenta el tamaño de la pantalla.
+🙋🏻‍♂️Los viewport es tomando en cuenta el tamaño de la pantalla, para hacer dinamico el tamaño y los textos tambien que sean fluidos con el tamaño de la pantalla.
+*/

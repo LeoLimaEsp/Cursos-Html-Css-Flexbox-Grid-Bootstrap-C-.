@@ -1,0 +1,118 @@
+/* 
+Propiedades background:
+🎃background-color: define el color de fondo del elemento
+🎃background-image: define la imagen del fondo del elemento
+🎃background-repeat: define como se repite la imagen de fondo en el elemento
+🎃background-size: definde el tamaño de la imagen de fondo, primer valor X, segundo Y
+    cover: cambia el tamaño de la imagen de fondo para asegurarse de que permanezca completamente visible
+    contain: cambia el tamaño de la imagen de fondo para asegurarse de que el elemento este completamente cubierto
+🎃background-position: define la posicion de la imagen de fondo, primer valor X, segundo Y(si no se especifica valor este sera "center"). Aparte de valores numericos podemos indicar el posicionamiento con las palabras: center, top, bottom, left y right.
+🎃background-clip: define cuanto debe extenderse el fondo dentro del elemento.
+🎃background-origin: define el origen de la imagen de fondo
+🎃background-attachment: define como se comportara la imagen de fondo al desplazarse por la página.
+
++background short hand (evitar usarlo)
+*/
+
+.box{
+    width: 300px;
+    height: 300px;
+    margin:2rem auto;
+    border: thick dashed red;
+}
+
+.bg-color{
+    background-color: rgba(133, 23, 23, 0.795);
+}
+
+.bg-image{
+    background-image: url(../assets/puesta-sol.jpg);
+}
+
+.bg-size{
+    background-image: url(../assets/puesta-sol.jpg);
+    background-size: 300px 200px;
+     background-size: cover;/* Define que no se deforme la imagen cubriendo todo el fondo pero puede que no se vea toda la imagen  */
+     background-size: contain; /*Define que se vea TODA la imagen pero no se asegura que se cubra todo el fondo. */
+}
+
+.bg-repeat{
+    background-image: url(../assets/puesta-sol.jpg);
+    background-size: 70px;
+    background-repeat: repeat-x;
+    background-repeat: repeat-y;
+    background-repeat: no-repeat;
+    /* Se puede repetir tantas veces solo en X o Y como se indique como el ejemplo de arriba o sin repetir. */
+}
+
+.bg-position{
+    background-color: aqua;
+    background-image: url(../assets/puesta-sol.jpg);
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-position: 2rem 3rem ;
+    background-position: 10%;
+    background-position: top left;
+    background-position: bottom right;
+    /* Se pueden usar para posicionar, numeros en rem, porcentaje, pixeles o palabras de orientación: top, left, etc. */
+}
+
+
+/* Manejo del background, la imagen se queda ahi mismo solo se pone el background encima y este puede recortar la foto. */
+.bg-clip{
+    background-color: aqua;
+    background-image: url(../assets/puesta-sol.jpg);
+    background-size: 200px;
+    background-repeat: no-repeat;
+    /* Antes de aplicar bg-clip se aprecia un fondo que cubre Todo, incluyendo el borde, pero la imagen inicia despúes del borde, ocupando incluso el padding. */
+    background-clip: border-box;/*  se aprecia un fondo que cubre Todo, incluyendo el borde, este es el modelo predeterminado, es decir no pasa nada.*/
+    background-clip: padding-box; /* Fondo y contenido inician sobre el padding, dejando el borde fuera. */
+    background-clip: content-box;/* El borde y padding se quedan fuera, se usa exclusivamente la caja de contenido*/ 
+    padding: 1rem;
+}
+
+/* Manejo del contenido, no background */
+.bg-origin{
+    background-color: aqua;
+    background-image: url(../assets/puesta-sol.jpg);
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-origin: padding-box; /* Es el valor predeterminado, inicia en el padding el contenido.*/
+    background-origin: content-box; /* El contenido inicia en la caja de contenido, solo el contenido no el background. */
+    background-origin: border-box; /* El contenido inicia desde el borde, si lo toma en cuenta. */
+    padding: 1rem;
+}
+
+.bg-attachment{
+    background-color: aqua;
+    background-image: url(../assets/puesta-sol.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 50vh;
+    background-size: cover;
+    background-attachment: scroll;/*  La imagen o contenido se va junto con la barra de scroll*/
+    background-attachment: fixed; /*  La imagen es fija, se va apreciando mediante se baja el scroll.*/
+    /* +background short hand (evitar usarlo) */
+}
+
+.bg-multiple{
+    background-color: aqua;
+    width: 50%;
+    height: 30vh;
+    background-image: 
+    url(../assets/favicon.png), 
+    url(../assets/puesta-sol.jpg),
+    url(../assets/pavicon_css.png);
+    background-size: 15%, 30%,cover ;
+    background-repeat: repeat-x, no-repeat;
+
+    /* Las imagenes se colocan como se van agregando, es decir la ultima es  la que se observa hasta el fondo. */
+}
+
+.bg-art{
+    width: 1000px;
+    height: 700px;
+    background: url(../assets/arbol.png) no-repeat center bottom, url(../assets/aves.png)no-repeat  center bottom, url(../assets/cielo.png) no-repeat center top fixed;
+}
+

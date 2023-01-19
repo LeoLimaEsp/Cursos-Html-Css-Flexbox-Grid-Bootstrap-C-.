@@ -1,0 +1,74 @@
+/*  -List style: short-hand
+    -List style image
+    -list style position
+    -list style type */
+
+.list{
+    list-style-type: disc;  /*default  */
+    list-style-type: square;
+    list-style-type: lower-alpha;
+    list-style: none;
+    list-style-type: lower-greek;
+    list-style-image: url(../assets/pavicon_css.png);
+    list-style-image: none;
+}
+
+.list li{
+    list-style: none;
+}
+
+.list li::before{
+    content: "eee";   /*  Para poner eso antes de los list-item */
+    content: "";
+    display: inline-block;
+    width: 2rem;
+    height: 1rem;
+    background-image: url(../assets/favicon.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* Configuración para hacer una imagen pequeña como tipo "style-type" */
+}
+
+.list-2 li{
+    background-color: yellowgreen;
+    list-style-position: outside; /*por defecto*/
+}
+
+.list-2-2 li{
+    background-color: yellowgreen;
+    list-style-position: inside;
+}
+
+.list-2-3{
+    list-style-type:georgian;
+}
+
+.list-3 li{
+    background-color: cornflowerblue;
+    list-style: lower-greek inside;
+}
+
+/* List-style=  type, image, position */
+
+.text-column-4{
+    column-count: 4; /*Cantidad de columnas*/
+    column-gap: 1rem; /*Separación entre columnas*/
+    column-rule: thin dotted skyblue; /*Separación entre columnas con lineas*/
+    list-style-position: inside;
+    column-width: 100px; /* Tamaño minimo de anchura de las columnas, que no se amontonen.*/
+}
+
+.text-colum-article{
+    column-count: 3; /*Cantidad de columnas*/
+    column-gap: 2rem; /*Separación entre columnas*/
+    column-rule: thin solid rgb(1, 28, 39); /*Separación entre columnas con lineas*/
+    list-style-position: inside;
+    column-width: 100px; /* Tamaño minimo de anchura de las columnas, que no se amontonen.*/
+}
+
+/* Esto es sólo para la creacion de columnas de listas o parrafos. */
+
+.error{
+    margin-top: 0rem;
+}

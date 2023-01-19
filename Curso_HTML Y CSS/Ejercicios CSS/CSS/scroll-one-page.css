@@ -1,0 +1,59 @@
+html{
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+
+body,h2,h2{
+    margin: 0;
+}
+
+img{
+    max-width: 50%;
+    height: auto;
+}
+
+header{
+    position: sticky;
+    /* Position sticky cabecera fija aunque baje el scroll pero podria ser QUE SE OCULTE UN POCO DEL TITULO CON ENLACES INTERNOS.*/
+    top: 0;
+    padding: 0.25rem;
+    text-align: center;
+    background-color: #000;
+    color: #FFF;
+}
+
+header a{
+    margin: 0 1rem;
+    color:#00c4d6;
+}
+
+header a:hover{
+    margin: 0 1rem;
+    color:greenyellow
+}
+
+.slide{
+    width: 100%;
+    min-height: 100vh;
+    color: #d9e8f0;
+    background-color: #1e2345;
+    padding: 2rem;
+}
+
+.slide:nth-child(even){
+    background-color: #107eb4;
+}
+
+[id]{  /*Los "[]" significa todos como el "*"*/
+    scroll-margin-top: 16ex;
+    /* Los ex son aproximadamente 1/2 rem= 8 pixeles prox */
+}
+

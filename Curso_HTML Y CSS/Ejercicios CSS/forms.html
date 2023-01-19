@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/forms.css">
+    <title>Formularios en CSS</title>
+</head>
+<body>
+    <h1>Formularios en CSS 🏆</h1>
+    <h2></h2>
+    <h4>Formulario de contacto</h4>
+    <!-- https://formsubmit.co/  es par hacer pruebas de funcionamiento-->
+    <form class="diseño-form" action="https://formsubmit.co/leonel.limae@hotmail.com" method="POST">
+    <input type="text" name="nombre" placeholder="Escribe tu nombre" title="Nombre solo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required  >
+    <!-- La expresion: ^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$ indica que se aceptan letras de la A a Z y se incluyen las letras como la "ñ" y otras con acentos que ahi se indican.  -->
+    <input type="email" name="correo" placeholder="Ingresa tu correo electronico" pattern="^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$" required title="Formato de correo invalido">
+    <!-- Esta expresion del email nos indica que se aceptan letras y numeros, ".", "-", "_", "@", etc.  -->
+    <textarea name="comentarios" id="" cols="30" rows="10" required placeholder="Escribe tus comentarios" ></textarea>
+    <!-- Las textareas no aceptan el atributo pattern, este solo es atributo de los inputs  -->
+    <!-- El input de nombre y email junto con el textarea llevan nombre o name por obligacion o no aparece en el correo enviado la info de estos.  -->
+    <input class="submit" type="submit">
+    </form>
+    <br>
+    <a href="index.html#Temario-css">Ir a temario 🙋🏻‍♂️</a>
+</body>
+</html>

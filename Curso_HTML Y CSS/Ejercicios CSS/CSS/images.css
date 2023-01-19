@@ -1,0 +1,27 @@
+img{
+    /* Hack para hacer una imagen responsiva, es decir que se adapte al viewport */
+    max-width: 100%;
+    height: auto;
+    /* Las imagenes son en linea, solo ocupan el espacio necesario. */
+}
+
+.card{
+    border: medium solid black;
+    width: 400px;
+    height: 600px;
+}
+
+.card img{
+    height: 300px;
+    /* Antes de aplicar object-fit el acomodo de la imagen puede deformarce y no se asegura que se ajuste a la caja.*/
+    object-fit: fill; /* valor por defecto*/
+    object-fit: cover; /* Esta herramienta ajusta la imagen a proporcion de que se cubra la caja y la imagen no se deforme pero puede que no se ves la imagen completa, por eso hay que acomodarla a como nos convenga*/
+    object-position: top left;
+    object-position: 50% 50%;   /*Centrado de imagen */
+    
+    object-fit: contain;  /* Aqui se ajusta a que se vea toda la imagen pero no se asegura que se cubra toda la caja */
+    object-fit: none; /*Aqui no hay funcion fit, solo indica que la imagen se colocara tal "original" sin cambiar el tamaño y solo se mostrara lo que se pueda en la caja, igual se puede ajustar la posicion. */
+    object-position: left center;
+     object-fit: scale-down; /*Toma el menor valor, entre contain y none */
+    background-color: bisque;
+}

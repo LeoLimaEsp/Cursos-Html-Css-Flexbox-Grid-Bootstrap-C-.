@@ -1,0 +1,792 @@
+html{
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+body{
+    margin: 0%;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+
+/* 3 tipos de movimiento:
+-transiciones
+-transformaciones
+-animaciones */
+
+.box{
+    border: thick solid black;
+    width: 200px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 7rem;
+    
+}
+
+.card{
+    border: thick solid black;
+    width: 600px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 7rem;
+}
+
+.card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 50%;
+}
+
+/* TRANSICIONES:
+-Property
+-duration
+-timing-function: none, lineal ease, ease in, ease out, ease-in-out steps
+-delay en segundos o milisegundos
+shorthand transition: property, duration, timing-function, delay
+*/
+.transitions .box{
+    background-color: magenta;
+    transition-property: background-color;
+    transition-duration: 400ms;
+    transition-timing-function: ease;
+    transition-delay: 0.5s;
+    transition: border-color 2s linear 1s;
+    transition: all 2s ease-in-out 1s;  /*Sólo aplicar cuando haya pocas transiciones, es decir pocos cambios*/
+    transition: background-color 2s ease-in-out 250ms, border-color 2s ease-in-out 250ms, border-radius 2s ease-in-out 250ms;
+}
+
+.transitions .box:hover{
+    background-color: cyan;
+    border-color: greenyellow;
+    border-radius: 25%;
+    /* Hay algunas propiedades que no son animables, por ejemplo: */
+    border-style: dashed;
+    /* Pero se puede buscar en mozilla developer el listado de propiedades animables. https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties */
+}
+
+.transitions .card{
+    /* transition: all 2s ease;    opcion multiple "aplicar todo y no es buena practica"*/
+    transition: opacity 1s ease-in-out,
+    border-color 3s steps(3),
+    filter 2s ease-in 1s, box-shadow 1.5s linear 2s;  /*aplicar por pasos*/
+}
+
+.transitions .card:hover{
+    opacity: 0.75;
+    border-color: orchid;
+    filter: blur(.15rem);
+    box-shadow: 1rem  1rem 2rem 0.5rem #000;
+}
+
+.transitions .card img{
+    transition: object-position 2s ease-in-out 3s;
+}
+
+.transitions .card img:hover{
+    object-position: 100% 50%;
+}
+
+/* Transformaciones------------------------ */
+
+.transform-2d img{
+    transition: transform 2s ease-in;
+}
+
+
+
+.transform-2d img:hover{
+    /* transform: none;    Por defecto */
+    transform: translateX(4rem);
+    transform: translateY(-4rem);
+    /* transform: rotateZ('angle'); Aplica en rotacion 3D */
+    transform:translate(-4rem, 4rem); /*Shorthand para transform en diagonal (X, Y)  tambien se puede con % porcentajes:*/
+    transform: translate(50%, 50%);
+    transform: scaleX(2);
+    transform: scaleY(.5);
+    transform: scale(50%, -50%);  /*Shorthand para la escala, un positivo puede invertir la imagen*/
+    transform: rotateX(46deg);
+    transform: rotateY(90deg);
+    transform: rotateZ(90deg);
+    transform: skewX(-45deg);
+    transform: skewY(-91deg);
+    transform: skew(45deg, 30deg);
+    /* No existe skew en eje Z */
+    /* 
+    matriz(scaleX, skewY, skewX, scaleY, translateX, translateY)
+    */
+    transform: matrix(1,2,3,1,20,10);
+    /* Aplicación de las 4 transformaciones basicas aplicadas al mismo tiempo: */
+    transform: translate(25%, -30%) rotate(180deg) skew(10deg, 20deg) scale(-0.5, -0.3);
+}
+
+/* Para aplicar transformaciones en 3D primero se activa la perspectiva: */
+.transform-3d{
+     perspective: 10rem; /*aqui o junto con el conjunto que se aplicara */
+}
+
+
+.transform-3d img{
+    transition: transform 2s ease-in-out;
+}
+
+.transform-3d img:hover{
+    transform: translateZ(4rem);
+    transform:  translateZ(-4rem); /*perspective(10rem)   Base estandar de perspective: 10rem*/
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate3d */
+    transform: translate3d(3rem, 50%, -5rem);
+    /* transform: scaleZ(1.5); No se aprecia la escala porque la imagen no tiene volumen de profundidad */
+    transform: scale3d(2, 0.5, 5);
+    transform: rotateX(45deg);
+    transform: rotateY(60deg);
+    transform: rotateZ(45deg);
+    transform: rotate3d(4, 2, 3, 45deg);
+    /* Existe la matriz en 3D */
+    transform: matrix3d(1,2,3,4,2,3,5,6,7,6,4,5,40,100,3,1.4);
+    /* Aplicación de las 4 transformaciones basicas aplicadas al mismo tiempo: */
+    transform: translate3d(2rem, 50%, -3rem) rotate3d(-1,2.5,-2,60deg) scale3d(2,0.5,3);
+}
+
+.transform-origin img{
+    transition: transform 2s ease-in-out;
+    /* transform-origin: x y z; */
+    transform-origin: 0% 0% 0;
+    transform-origin: 0;
+    transform-origin: top right;
+    transform-origin: bottom center;
+    transform-origin: -2rem 5rem;
+}
+
+.transform-origin img:hover{
+    transform: rotate(360deg);
+}
+
+.flip-card-1,
+.flip-card-2{
+    border: thick solid black;
+    width: 600px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 7rem;
+    position: relative;
+    cursor: pointer;
+    transition: transform 1s ease-in-out;
+    perspective: 10rem; /*Para activar la perspectiva en 3 dimensiones*/
+    transform-style: flat;
+    transform-style: preserve-3d; /*Es para hacer independientes sus valores 3D de cada tarjeta hija*/
+}
+
+.flip-card-1 img,
+.flip-card-2 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 50%;
+}
+
+.flip-face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: visible; /*valor por defecto*/
+    backface-visibility: hidden;
+}
+
+.flip-front{
+    transform: rotateY(0deg);
+}
+
+.flip-back{
+    transform: rotateY(180deg);
+}
+
+.flip-card-1:hover{
+    transform: rotateY(180deg);
+}
+
+.flip-card-2{
+    transform-origin: center right;
+}
+
+.flip-card-2:hover{
+    transform: translateX(-100%) rotateY(-180deg);
+}
+
+/* Se le llama "fotograma" a las transiciones de movimiento que se van ajecutando, estas se controlan de la siguiente manera: */
+
+@keyframes myAwesomeAnimation{  /*Lleva el nombre de la animacion a crear el "@keyfrmae" es la linea de tiempo*/ 
+from{                           /*Donde inicia la animacion, el selector from*/ 
+opacity: 0.2;                     /*Revisar que propiedades son animables*/ 
+transform: translateX(0);
+}
+to{
+opacity: 1;
+transform: translateX(100%);
+}
+}
+
+.my-animation{
+    /* animation: name duration timing-function delay iteration-count direction fill-mode ***play-state***; */
+    animation-name: myAwesomeAnimation;
+    animation-duration: 3s;  /*Name y duration son siempre necesarias*/
+    animation-timing-function:cubic-bezier(.58,.15,.76,.13);
+    /* https://cubic-bezier.com/#.58,.15,.76,.13 */
+    animation-timing-function:ease-in-out;
+    animation-delay: 1500ms;
+    animation-iteration-count:2 ;   /*Numero de veces que se haga la animacion*/
+    /* animation-iteration-count:infinite ;  */
+    animation-direction:reverse;  /*Darle la direccion o indicar si inical al final o alternado*/
+    animation-fill-mode:forwards; /*Al final de la animacion se queda con los estilos finales de la animacion*/
+    animation-fill-mode:backwards; /*Al final de la animacion se queda con los estilos iniciales de la animacion*/
+    /* Esta herramienta nos puede ayudar a marcar los estilos determinados del keyframes del selector "to" */
+    animation-fill-mode: both; /*Ayuda a tener las dos animaciones: "forwards y backwards que ayudan a no ver bruscamente el inicio de la animacion*/
+
+
+    /* animation-play-state: running;
+    animation-play-state:paused;
+    Estas animaciones por si solas no sirven pero pueden servir con ayuda de JS*/
+
+    /* short-hand 👇🏻:  */
+    animation: myAwesomeAnimation 2s ease 250ms 4 alternate both running;
+}
+
+
+@keyframes myAwesomeAnimation2{
+    /* Se establece el rango del fotograma con porcentajes, iniciando del 0 al 100%: */
+0%{
+    opacity: 0;
+    transform: translateX(0%)
+}
+
+50%{
+    opacity: .5;
+    transform: translateX(-50%)
+}
+
+75%{
+    transform: translateX(-75%)
+}
+
+100%{
+    opacity: 1;
+    transform: translateX(100%)
+}
+}
+
+.my-animation-2{
+    animation: myAwesomeAnimation2 6s;
+}
+
+@keyframes multipleAnimation1{
+0%{
+    opacity: 1;
+}
+
+50%{
+    opacity: 0;
+}
+
+100%{
+    opacity: 1;
+}
+}
+
+@keyframes multipleAnimation2{
+    0%{
+        transform: translateY(0);
+    }
+    
+    50%{
+        transform: translateY(-100%);
+    }
+    
+    100%{
+        transform: translateY(0);
+    }
+    }
+
+.motion-examples{
+    text-align: center;
+}
+
+.animation-multiple{
+    animation: multipleAnimation1 2s 4, multipleAnimation2 2s 3 ease-in-out;
+}
+
+@keyframes fadeIn{
+0%{
+    opacity: 0;
+}
+
+100%{
+    opacity: 1;
+}
+}
+
+@keyframes fadeOut{
+    0%{
+        opacity: 1;
+    }
+    
+    100%{
+        opacity: 0;
+    }
+    }
+
+
+
+.fade-in{
+    font-size: 5vw;
+    animation: fadeIn 2s linear 2s infinite alternate;
+}
+
+.fade-out{
+    font-size: 5vw;
+    animation: fadeOut 2s linear 2s infinite alternate both;
+}
+
+@keyframes shake{
+    10%, 90%{
+        transform: translate(-1px, 0);
+    }
+
+    20%, 80%{
+        transform: translate(2px, 0);
+    }
+
+    30%, 50%, 70%{
+        transform: translate(-4px, 0);
+    }
+
+    40%, 60%{
+        transform: translate(4px, 0);
+    }
+}
+
+.shake{
+    font-size: 5vw;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.shake:hover{
+    animation: shake .5s cubic-bezier(.36, .07, .19, .97) both;
+    transform: translate(0 , 0);
+}
+
+.pulse{
+    font-size: 5vw;
+    cursor: pointer;
+    /* display: inline-block; */
+    animation: pulse 1s linear infinite both;
+}
+
+@keyframes pulse{
+0%{
+    transform: scale(1.1);
+}
+
+50%{
+    transform: scale(0.8);
+}
+
+100%{
+    transform: scale(1);
+}
+}
+
+.heart{
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 10vw;
+    height: 10vw;
+    /* background-color: greenyellow; */
+    animation: pulse 1s linear infinite both;
+    
+}
+
+@keyframes color{
+    0%{
+        background-color: #d00;
+    }
+}
+
+.heart::after,
+.heart::before{
+    position: absolute;
+    content:"" ;
+    left: 0vw;
+    top:0;
+    width: 5vw;
+    height: 8vw;
+    background-color: #a00;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+    border-radius: 5vw 5vw 0 0;
+    animation: color 1s infinite;
+
+}
+
+.heart::after{
+    left: 5vw;
+    transform: rotate(-45deg);
+    transform-origin: 0% 100%;
+    
+}
+
+@keyframes spinner{
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.spinner{
+    /* background-color: #d00; */
+    width: 10vw;
+    height: 10vw;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    border: 1vw solid rgba(0, 0, 0, .10);
+    border-top-color:rgb(99, 107, 104) ;
+    animation: spinner 1s ease-out infinite both;
+}
+
+.btn{
+    position: relative;
+    border: none;
+    border-radius: .25rem;
+    padding: .2rem;
+    width: 15rem;
+    height: 2.5rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0.25rem 0.25rem 0.5rem 0.25rem rgba(0, 0, 0, 0.2);
+}
+
+.anim-bottom::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: .25rem;
+    background-color: #d00;
+    transition: width 0.5s ease, left 0.5s ease, right 0.5s ease;
+}
+
+.anim-bottom:hover::after{
+    width: 100%;
+}
+
+.to-left::after{     /*afetr Indica en que parte inicia*/
+    left: 0;
+}
+
+.to-center::after{
+    left: 50%;
+}
+
+
+.to-center:hover::after{
+    left: 0%;
+}
+
+
+.to-right::after{
+    right: 0;
+}
+
+.anim-bg-gradient{
+    background-image: linear-gradient(to right, rgb(255, 222, 192), orange, orangered, rgb(0, 102, 255), rgb(96, 247, 66));
+    background-size: 300% 100%;  /*300 de anchura y 100 de altura*/
+    transition: background-position 1s ease-in-out;
+}
+
+
+.anim-bg-gradient:hover{
+    background-position: 100% 0%; /*0 es lado inicial por defecto izquierdo en X y 0 en las Y de arriba hacia abajo.*/
+}
+
+.tabs-menu{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+    width: 70%;
+    height: 3rem;
+    border-radius:1rem ;
+    background-color: #DDD;
+    display: flex;  /*Colocar todos los elementos en linea*/
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tabs-menu input{
+    display: none;
+}
+
+.tabs-menu label{
+    position: relative;
+    width: calc(100% / 4 - 0.5rem);
+    text-align: center;
+    cursor: pointer;
+    z-index: 1;
+
+}
+
+.tabs-menu label:hover{
+    color: rgb(20, 46, 194);
+}
+
+.tabs-menu input[type= "radio"]:checked + label{
+    color: rgb(251, 251, 253);
+    /* Conjunto de input tipo checked y label se queden marcadas  */
+}
+
+
+.tab-bg-hover{
+    position: absolute;
+    width: calc(100% / 4 - 0.5rem);
+    height: 2rem;
+    background-image:linear-gradient(45deg, rgb(128, 10, 10), rgb(170, 15, 15), rgb(235, 31, 31));
+    background-size: 110%;
+    border-radius: 0.8rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+#tab-1:checked ~ .tab-bg-hover{
+    transform: translateX(0);
+}
+
+#tab-2:checked ~ .tab-bg-hover{
+    transform: translateX(100%);
+}
+
+#tab-3:checked ~ .tab-bg-hover{
+    transform: translateX(200%);
+}
+
+#tab-4:checked ~ .tab-bg-hover{
+    transform: translateX(300%);
+}
+
+.off-canvas-btn{
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 998;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    /* opacity: 0.25; */
+    opacity: 0;
+}
+
+.off-canvas-burger{
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 997;
+    width: 3rem;
+    height: 0.6rem;
+    background-color: grey;
+    border-radius: 0.3rem;
+    transform: rotate(0deg) translate(0, -1.2rem);
+    transition: transform 0.5s ease, background-color 500ms ease;
+    transform-origin: top left;
+}
+
+.off-canvas-burger::before,
+.off-canvas-burger::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0.6rem;
+    background-color: grey;
+    border-radius: 0.3rem;
+    transition: transform 500ms ease;
+}
+
+.off-canvas-burger::before{
+    transform: rotate(0deg) translate(0, -0.9rem);
+    background-color: grey;
+}
+
+.off-canvas-burger::after{
+    transform: rotate(0deg) translate(0, 0.3rem);
+    background-color: grey;
+}
+
+.off-canvas-btn:checked + .off-canvas-burger{
+    background-color: transparent;
+}
+
+.off-canvas-btn:checked + .off-canvas-burger::before{
+    transform: rotate(45deg) translate(0,0);
+    background-color: #d00;
+}
+
+.off-canvas-btn:checked + .off-canvas-burger::after{
+    transform: rotate(-45deg) translate(0.3rem, -0.5rem);
+    background-color: #d00;
+}
+
+.off-canvas-menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0008;
+    z-index: 995;
+    display: flex;
+    justify-content: center;   /*Ejes de las X*/
+    align-items: center;   /*eje de las Y*/
+    transform: translate(50%, 200%);
+    transition: transform 500ms ease-in-out;
+}
+
+.off-canvas-menu-container{
+    /* background-color: #a00; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;  /*Por defecto son en row pero asi se pondran en columna*/
+    justify-content: center;
+}
+
+.off-canvas-link{
+    border-bottom: thin solid white;
+    padding: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    color: #DDD;
+    transition: background-color 1.4s ease;
+}
+
+.off-canvas-link:hover{
+    background-color: rgba(255, 68, 0, 0.692);
+}
+
+.off-canvas-link:first-child{
+    border-top: thin solid white;
+}
+
+.off-canvas-btn:checked ~ .off-canvas-menu{ /*Se ocupa en + cuando son hermanos del mismo nivel, en este caso no son, asi que se ocupa ~ para cualquier otro hermano*/ 
+    transform: translate(0, 0);
+}
+
+.modal{
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #0008;
+z-index: 995;
+display: flex;
+justify-content: center;   /*Ejes de las X*/
+align-items: center;
+transition: opacity 500ms ease-in-out;
+opacity: 0;
+pointer-events: none;
+}
+
+.modal:target{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-container{
+    position: relative;
+    border: thick double grey;
+    border-radius: 1rem;
+    padding: 2rem;
+    background-color: aliceblue;
+    width: 70%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.modal-cerrar{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: #a00;
+    text-align: center;
+    text-decoration: none;
+    line-height: 3rem;
+    color: white;
+    border-radius: 50%;
+    transition: background-color 300ms linear, transtransform 300ms ease-in-out;
+
+}
+
+.modal-cerrar:hover{
+    background-color: rgb(214, 7, 7);
+    transform: scale(1.2);
+}
+
+@keyframes intro-starwars{
+    0%{
+        transform: perspective(100vh) rotateX(25deg) translateY(100%);
+    }
+
+100%{
+    transform: perspective(100vh) rotateX(50deg) translateY(-200%);
+}
+}
+
+.star-wars{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    color: #ffb13a;
+    background-image: url(../assets/stars.gif);
+}
+
+.star-wars-container{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    text-align: justify;
+    letter-spacing: 0.1rem;
+    animation: intro-starwars 20s linear infinite;
+}
+
+h2, h3{
+    font-size: 5vw;
+    text-align: center;
+}
+
+.star-wars p{
+    font-size: 3vw;
+    line-height: 4rem;
+}
