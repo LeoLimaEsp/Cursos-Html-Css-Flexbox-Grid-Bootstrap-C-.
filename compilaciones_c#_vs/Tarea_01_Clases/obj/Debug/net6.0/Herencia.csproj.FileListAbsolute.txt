@@ -1,0 +1,15 @@
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_01_Clases\bin\Debug\net6.0\Herencia.exe
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_01_Clases\bin\Debug\net6.0\Herencia.deps.json
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_01_Clases\bin\Debug\net6.0\Herencia.runtimeconfig.json
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_01_Clases\bin\Debug\net6.0\Herencia.dll
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_01_Clases\bin\Debug\net6.0\Herencia.pdb
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_01_Clases\obj\Debug\net6.0\Herencia.csproj.AssemblyReference.cache
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_01_Clases\obj\Debug\net6.0\Herencia.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_01_Clases\obj\Debug\net6.0\Herencia.AssemblyInfoInputs.cache
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_01_Clases\obj\Debug\net6.0\Herencia.AssemblyInfo.cs
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_01_Clases\obj\Debug\net6.0\Herencia.csproj.CoreCompileInputs.cache
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_01_Clases\obj\Debug\net6.0\Herencia.dll
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_01_Clases\obj\Debug\net6.0\refint\Herencia.dll
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_01_Clases\obj\Debug\net6.0\Herencia.pdb
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_01_Clases\obj\Debug\net6.0\Herencia.genruntimeconfig.cache
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_01_Clases\obj\Debug\net6.0\ref\Herencia.dll

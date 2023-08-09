@@ -1,0 +1,15 @@
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Intro_polimorfismo\bin\Debug\net6.0\Intro_polimorfismo.exe
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Intro_polimorfismo\bin\Debug\net6.0\Intro_polimorfismo.deps.json
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Intro_polimorfismo\bin\Debug\net6.0\Intro_polimorfismo.runtimeconfig.json
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Intro_polimorfismo\bin\Debug\net6.0\Intro_polimorfismo.dll
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Intro_polimorfismo\bin\Debug\net6.0\Intro_polimorfismo.pdb
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Intro_polimorfismo\obj\Debug\net6.0\Intro_polimorfismo.csproj.AssemblyReference.cache
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Intro_polimorfismo\obj\Debug\net6.0\Intro_polimorfismo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Intro_polimorfismo\obj\Debug\net6.0\Intro_polimorfismo.AssemblyInfoInputs.cache
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Intro_polimorfismo\obj\Debug\net6.0\Intro_polimorfismo.AssemblyInfo.cs
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Intro_polimorfismo\obj\Debug\net6.0\Intro_polimorfismo.csproj.CoreCompileInputs.cache
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Intro_polimorfismo\obj\Debug\net6.0\Intro_polimorfismo.dll
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Intro_polimorfismo\obj\Debug\net6.0\refint\Intro_polimorfismo.dll
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Intro_polimorfismo\obj\Debug\net6.0\Intro_polimorfismo.pdb
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Intro_polimorfismo\obj\Debug\net6.0\Intro_polimorfismo.genruntimeconfig.cache
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Intro_polimorfismo\obj\Debug\net6.0\ref\Intro_polimorfismo.dll

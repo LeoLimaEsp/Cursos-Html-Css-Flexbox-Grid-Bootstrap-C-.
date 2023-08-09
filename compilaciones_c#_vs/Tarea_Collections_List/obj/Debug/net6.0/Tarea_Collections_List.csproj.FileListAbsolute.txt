@@ -1,0 +1,15 @@
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_Collections_List\bin\Debug\net6.0\Tarea_Collections_List.exe
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_Collections_List\bin\Debug\net6.0\Tarea_Collections_List.deps.json
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_Collections_List\bin\Debug\net6.0\Tarea_Collections_List.runtimeconfig.json
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_Collections_List\bin\Debug\net6.0\Tarea_Collections_List.dll
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_Collections_List\bin\Debug\net6.0\Tarea_Collections_List.pdb
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_Collections_List\obj\Debug\net6.0\Tarea_Collections_List.csproj.AssemblyReference.cache
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_Collections_List\obj\Debug\net6.0\Tarea_Collections_List.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_Collections_List\obj\Debug\net6.0\Tarea_Collections_List.AssemblyInfoInputs.cache
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_Collections_List\obj\Debug\net6.0\Tarea_Collections_List.AssemblyInfo.cs
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_Collections_List\obj\Debug\net6.0\Tarea_Collections_List.csproj.CoreCompileInputs.cache
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_Collections_List\obj\Debug\net6.0\Tarea_Collections_List.dll
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_Collections_List\obj\Debug\net6.0\refint\Tarea_Collections_List.dll
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_Collections_List\obj\Debug\net6.0\Tarea_Collections_List.pdb
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_Collections_List\obj\Debug\net6.0\Tarea_Collections_List.genruntimeconfig.cache
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_Collections_List\obj\Debug\net6.0\ref\Tarea_Collections_List.dll

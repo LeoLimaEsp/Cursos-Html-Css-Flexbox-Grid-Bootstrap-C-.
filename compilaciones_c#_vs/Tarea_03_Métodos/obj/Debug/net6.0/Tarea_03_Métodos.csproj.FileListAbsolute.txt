@@ -1,0 +1,15 @@
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_03_Métodos\bin\Debug\net6.0\Tarea_03_Métodos.exe
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_03_Métodos\bin\Debug\net6.0\Tarea_03_Métodos.deps.json
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_03_Métodos\bin\Debug\net6.0\Tarea_03_Métodos.runtimeconfig.json
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_03_Métodos\bin\Debug\net6.0\Tarea_03_Métodos.dll
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_03_Métodos\bin\Debug\net6.0\Tarea_03_Métodos.pdb
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_03_Métodos\obj\Debug\net6.0\Tarea_03_Métodos.csproj.AssemblyReference.cache
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_03_Métodos\obj\Debug\net6.0\Tarea_03_Métodos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_03_Métodos\obj\Debug\net6.0\Tarea_03_Métodos.AssemblyInfoInputs.cache
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_03_Métodos\obj\Debug\net6.0\Tarea_03_Métodos.AssemblyInfo.cs
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_03_Métodos\obj\Debug\net6.0\Tarea_03_Métodos.csproj.CoreCompileInputs.cache
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_03_Métodos\obj\Debug\net6.0\Tarea_03_Métodos.dll
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_03_Métodos\obj\Debug\net6.0\refint\Tarea_03_Métodos.dll
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_03_Métodos\obj\Debug\net6.0\Tarea_03_Métodos.pdb
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_03_Métodos\obj\Debug\net6.0\Tarea_03_Métodos.genruntimeconfig.cache
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Tarea_03_Métodos\obj\Debug\net6.0\ref\Tarea_03_Métodos.dll

@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    string saludo = "Elige una opción:";
+}
+
+<div class="text-center">
+    <h1 class="display-4" style="color:#022B11 ;">Escuela MVC</h1>
+    <p>@saludo</p>
+</div>
+
+<div class="row">
+    <div class="col-6 pt-2 pb-2">Nuevo Alumno <br>
+        <a class="btn btn-success mt-2" asp-controller="AlumnoControler" asp-action="Create">Agregar</a></div>
+
+    <div class="col-6 pt-2 pb-2">Alumnos existentes en sistema<br>
+        <a class="btn btn-success mt-2" asp-controller="AlumnoControler" asp-action="Index">Ver</a></div>
+
+    <div class="col-6 pt-2 pb-2">Nueva materia<br>
+        <a class="btn btn-primary mt-2" asp-controller="MateriaControler" asp-action="Create">Agregar</a></div>
+
+    <div class="col-6 pt-2 pb-2">Materias disponibles<br>
+        <a class="btn btn-primary mt-2" asp-controller="MateriaControler" asp-action="Index">Ver</a></div>
+
+    <div class="col-6 pt-2 pb-2">Nuevo profesor<br>
+        <a class="btn btn-warning mt-2" asp-controller="ProfesorControler" asp-action="Create">Agregar</a></div>
+
+    <div class="col-6 pt-2 pb-2">Profesores existentes en sistema<br>
+        <a class="btn btn-warning mt-2" asp-controller="ProfesorControler" asp-action="Index">Ver</a></div>
+
+</div>

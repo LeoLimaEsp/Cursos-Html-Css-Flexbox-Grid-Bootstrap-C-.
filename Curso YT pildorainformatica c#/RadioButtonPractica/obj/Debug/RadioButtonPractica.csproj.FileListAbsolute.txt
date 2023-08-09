@@ -1,0 +1,32 @@
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\RadioButtonPractica\bin\Debug\RadioButtonPractica.exe.config
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\RadioButtonPractica\bin\Debug\RadioButtonPractica.exe
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\RadioButtonPractica\bin\Debug\RadioButtonPractica.pdb
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\RadioButtonPractica\obj\Debug\RadioButtonPractica.csproj.AssemblyReference.cache
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\RadioButtonPractica\obj\Debug\RadioButtonPractica.csproj.SuggestedBindingRedirects.cache
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\RadioButtonPractica\obj\Debug\MainWindow.g.cs
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\RadioButtonPractica\obj\Debug\App.g.cs
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\RadioButtonPractica\obj\Debug\RadioButtonPractica_MarkupCompile.cache
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\RadioButtonPractica\obj\Debug\RadioButtonPractica_MarkupCompile.lref
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\RadioButtonPractica\obj\Debug\MainWindow.baml
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\RadioButtonPractica\obj\Debug\RadioButtonPractica.g.resources
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\RadioButtonPractica\obj\Debug\RadioButtonPractica.Properties.Resources.resources
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\RadioButtonPractica\obj\Debug\RadioButtonPractica.csproj.GenerateResource.cache
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\RadioButtonPractica\obj\Debug\RadioButtonPractica.csproj.CoreCompileInputs.cache
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\RadioButtonPractica\obj\Debug\RadioButtonPractica.exe
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\RadioButtonPractica\obj\Debug\RadioButtonPractica.pdb
+C:\Users\leone\OneDrive\Escritorio\Cursos\Curso YT pildorainformatica c#\RadioButtonPractica\bin\Debug\RadioButtonPractica.exe.config
+C:\Users\leone\OneDrive\Escritorio\Cursos\Curso YT pildorainformatica c#\RadioButtonPractica\bin\Debug\RadioButtonPractica.exe
+C:\Users\leone\OneDrive\Escritorio\Cursos\Curso YT pildorainformatica c#\RadioButtonPractica\bin\Debug\RadioButtonPractica.pdb
+C:\Users\leone\OneDrive\Escritorio\Cursos\Curso YT pildorainformatica c#\RadioButtonPractica\obj\Debug\RadioButtonPractica.csproj.AssemblyReference.cache
+C:\Users\leone\OneDrive\Escritorio\Cursos\Curso YT pildorainformatica c#\RadioButtonPractica\obj\Debug\RadioButtonPractica.csproj.SuggestedBindingRedirects.cache
+C:\Users\leone\OneDrive\Escritorio\Cursos\Curso YT pildorainformatica c#\RadioButtonPractica\obj\Debug\MainWindow.g.cs
+C:\Users\leone\OneDrive\Escritorio\Cursos\Curso YT pildorainformatica c#\RadioButtonPractica\obj\Debug\App.g.cs
+C:\Users\leone\OneDrive\Escritorio\Cursos\Curso YT pildorainformatica c#\RadioButtonPractica\obj\Debug\RadioButtonPractica_MarkupCompile.cache
+C:\Users\leone\OneDrive\Escritorio\Cursos\Curso YT pildorainformatica c#\RadioButtonPractica\obj\Debug\RadioButtonPractica_MarkupCompile.lref
+C:\Users\leone\OneDrive\Escritorio\Cursos\Curso YT pildorainformatica c#\RadioButtonPractica\obj\Debug\MainWindow.baml
+C:\Users\leone\OneDrive\Escritorio\Cursos\Curso YT pildorainformatica c#\RadioButtonPractica\obj\Debug\RadioButtonPractica.g.resources
+C:\Users\leone\OneDrive\Escritorio\Cursos\Curso YT pildorainformatica c#\RadioButtonPractica\obj\Debug\RadioButtonPractica.Properties.Resources.resources
+C:\Users\leone\OneDrive\Escritorio\Cursos\Curso YT pildorainformatica c#\RadioButtonPractica\obj\Debug\RadioButtonPractica.csproj.GenerateResource.cache
+C:\Users\leone\OneDrive\Escritorio\Cursos\Curso YT pildorainformatica c#\RadioButtonPractica\obj\Debug\RadioButtonPractica.csproj.CoreCompileInputs.cache
+C:\Users\leone\OneDrive\Escritorio\Cursos\Curso YT pildorainformatica c#\RadioButtonPractica\obj\Debug\RadioButtonPractica.exe
+C:\Users\leone\OneDrive\Escritorio\Cursos\Curso YT pildorainformatica c#\RadioButtonPractica\obj\Debug\RadioButtonPractica.pdb

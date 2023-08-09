@@ -1,0 +1,15 @@
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Dictionary\obj\Debug\net6.0\Dictionary.csproj.AssemblyReference.cache
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Dictionary\obj\Debug\net6.0\Dictionary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Dictionary\obj\Debug\net6.0\Dictionary.AssemblyInfoInputs.cache
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Dictionary\obj\Debug\net6.0\Dictionary.AssemblyInfo.cs
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Dictionary\obj\Debug\net6.0\Dictionary.csproj.CoreCompileInputs.cache
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Dictionary\bin\Debug\net6.0\Dictionary.exe
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Dictionary\bin\Debug\net6.0\Dictionary.deps.json
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Dictionary\bin\Debug\net6.0\Dictionary.runtimeconfig.json
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Dictionary\bin\Debug\net6.0\Dictionary.dll
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Dictionary\bin\Debug\net6.0\Dictionary.pdb
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Dictionary\obj\Debug\net6.0\Dictionary.dll
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Dictionary\obj\Debug\net6.0\refint\Dictionary.dll
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Dictionary\obj\Debug\net6.0\Dictionary.pdb
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Dictionary\obj\Debug\net6.0\Dictionary.genruntimeconfig.cache
+C:\Users\leone\OneDrive\Escritorio\Cursos\compilaciones_c#_vs\Dictionary\obj\Debug\net6.0\ref\Dictionary.dll

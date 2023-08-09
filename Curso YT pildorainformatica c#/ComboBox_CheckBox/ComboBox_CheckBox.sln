@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33403.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComboBox_CheckBox", "ComboBox_CheckBox.csproj", "{320D7223-9B84-4970-9E6F-9B1F176D84B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{320D7223-9B84-4970-9E6F-9B1F176D84B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{320D7223-9B84-4970-9E6F-9B1F176D84B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{320D7223-9B84-4970-9E6F-9B1F176D84B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{320D7223-9B84-4970-9E6F-9B1F176D84B9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {164BAE21-62FF-4CE2-A7BD-9BC2FDBC81B1}
+	EndGlobalSection
+EndGlobal
