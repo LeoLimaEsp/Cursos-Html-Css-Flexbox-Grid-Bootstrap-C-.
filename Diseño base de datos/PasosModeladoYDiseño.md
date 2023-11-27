@@ -14,3 +14,12 @@
 1. Identificar los tipos de dato de los atributos de las entidades del sistema.
 1. Identificar los atributos que puedan ser únicos en el sistema.
 1. Identificar las reglas de negocio (Operaciones CRUD) del sistema.
+
+## Glosario
+
+- **PK**: _Primary Key_
+- **FK**: _Foreign Key_
+- **UQ**: _Unique attribute_
+- **ED**: _Entidad de datos_
+- **EP**: _Entidad pivote_
+- **EC**: _Entidad catalogo_
